@@ -1,0 +1,25 @@
+body,
+h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+nav {
+    padding: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.brand-logo h1 {
+    font-family: 'Ovo', serif;
+    color: #1565c0;
+}
+
+.action {
+    background-color: #1565c0;
+    color: white;
+}
+
+ul {
+    float: right;
+}
