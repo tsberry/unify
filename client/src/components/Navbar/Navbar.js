@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AuthService from "../AuthService";
 import "./Navbar.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
@@ -12,6 +13,7 @@ const Navbar = props => (
             <ul className="menu">
                 <li><Link to="/search">Search</Link></li>
                 <li><Link to="/login">Login</Link></li>
+                <li><button onClick={new AuthService().logout}>Logout</button></li>
                 <li><Link to="/join" className="action">Join</Link></li>
             </ul>
         </div>
