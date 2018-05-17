@@ -7,15 +7,15 @@ const tab = props => (
     <div className="content">
     
       <ul className="tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" id="example-tabs">
-        <li className="tabs-title is-active"><a href="#panel1" aria-selected="true">Rank your School
+        <li className="tabs-title is-active"><a href="#panel1" aria-selected="true">Rank
         </a></li>
-        <li className="tabs-title"><a href="#panel2">Tab 2</a></li>
-        <li className="tabs-title"><a href="#panel3">Tab 3</a></li>
+        <li className="tabs-title"><a href="#panel2">Add Ranking</a></li>
+  
       </ul>
 
       <div className="tabs-content" data-tabs-content="example-tabs">
         <div className="tabs-panel is-active" id="panel1">
-          <p><h3>University of San Diego</h3></p>
+          <p><h3>Rank this School</h3></p>
           <p></p>
         </div>
         <div className="tabs-panel" id="panel2">
