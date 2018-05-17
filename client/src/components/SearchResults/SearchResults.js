@@ -5,21 +5,21 @@ const SearchResults = props => (
  
   <div className="grid-container callout secondary">
     <div className="grid-x grid-padding-x title">
-      <div className="large-12 cell"><h3>UCSD</h3></div>
+      <div className="large-12 cell"><h3>{props.name}</h3></div>
     </div>
     <div className="grid-x grid-padding-x title">
-      <div className="large-12 cell"><p>San Diego, California</p></div>
+      <div className="large-12 cell"><p>{props.city}, {props.state}</p></div>
     </div>
     <div className="grid-x grid-padding-x title">
-      <div className="large-12 cell"><p>5,500 Undergraduate Students</p></div>
+      <div className="large-12 cell"><p>{props.students} Undergraduate Students</p></div>
     </div>
     <div className="grid-x grid-padding-x title">
       <div className="large-12 cell"><p>Link</p></div>
     </div>
     <div className="grid-x grid-padding-x title">
-      <div className="large-1 cell">4 Year</div>
-      <div className="large-1 cell">Public</div>
-      <div className="large-1 cell">City</div>
+      <div className="large-1 cell">{props.years}</div>
+      <div className="large-1 cell">{props.ownership}</div>
+      <div className="large-1 cell">{props.locationType}</div>
       <div className="large-1 cell">Medium</div>
     </div>
   </div>

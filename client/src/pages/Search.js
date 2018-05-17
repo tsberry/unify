@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import API from "../utils/API";
+import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 import SearchResults from "../components/SearchResults/SearchResults";
 
@@ -24,12 +24,11 @@ class Search extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.searchColleges(this.state.search)
+    API.searchColleges(this.state.zipcode, this.state.radius)
     .then(res => {
-      if (res.data.status === "error") {
-        throw new Error(res.data.message);
-      }
-      this.setState({ results: res.data.message, error: "" });
+      this.setState ({
+        schools: res.data
+      });
     })
     .catch(err => this.setState({ error: err.message }));
   };
@@ -44,7 +43,19 @@ class Search extends Component {
               zipcode={this.state.zipcode}
               radius={this.state.radius}
             />
-            <SearchResults/>
+            <ul>
+              {this.state.schools.map(school => (
+                <SearchResults
+                  name = {school.name}
+                  city = {school.city}
+                  state = {school.state}
+                  students = {school.size}
+                  years = {school.type}
+                  ownership = {school.ownership}
+                  loacationType = {school.location}
+                />
+              ))}
+            </ul>
         </div>
     );
   }
