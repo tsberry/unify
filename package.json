@@ -17,13 +17,9 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
-
-  
-    "react-router-dom": "^4.2.2"
-
     "axios": "^0.18.0",
     "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.18.3",
     "express": "^4.16.3"
-
   }
 }
