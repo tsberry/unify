@@ -1,25 +1,25 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn init
+  C:\Program Files\nodejs\node.exe C:\Users\Thomas\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js start
 
 PATH: 
-  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Thomas\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\MongoDB\Server\3.6\bin;C:\Users\Thomas\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\Thomas\AppData\Roaming\npm;C:\Program Files\Heroku\bin
 
 Yarn version: 
   1.6.0
 
 Node version: 
-  8.11.1
+  8.10.0
 
 Platform: 
-  darwin x64
+  win32 x64
 
 Trace: 
-  SyntaxError: /Users/samd/Desktop/unify/package.json: Unexpected string in JSON at position 540
+  SyntaxError: C:\Users\Thomas\Code\unify\package.json: Unexpected string in JSON at position 540
       at JSON.parse (<anonymous>)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:1130:59
+      at C:\Users\Thomas\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1130:59
       at Generator.next (<anonymous>)
-      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:98:30)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:109:13
+      at step (C:\Users\Thomas\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:98:30)
+      at C:\Users\Thomas\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:109:13
       at <anonymous>
 
 npm manifest: 
@@ -47,6 +47,7 @@ npm manifest:
       "react-router-dom": "^4.2.2"
   
       "axios": "^0.18.0",
+      "bcrypt-nodejs": "^0.0.3",
       "express": "^4.16.3"
   
     }
@@ -175,6 +176,10 @@ Lockfile:
       isobject "^3.0.1"
       mixin-deep "^1.2.0"
       pascalcase "^0.1.1"
+  
+  bcrypt-nodejs@^0.0.3:
+    version "0.0.3"
+    resolved "https://registry.yarnpkg.com/bcrypt-nodejs/-/bcrypt-nodejs-0.0.3.tgz#c60917f26dc235661566c681061c303c2b28842b"
   
   binary-extensions@^1.0.0:
     version "1.11.0"
