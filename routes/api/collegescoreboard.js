@@ -124,6 +124,8 @@ router.get("/schools/:id", function (req, res) {
                 name: response.data.results[0].school.name,
                 city: response.data.results[0].school.city,
                 state: response.data.results[0].school.state,
+                lat: response.data.results[0].location.lat,
+                lon: response.data.results[0].location.lon,
                 size: response.data.results[0]["2015"].student.size,
                 url: response.data.results[0].school.school_url,
                 type: type,
