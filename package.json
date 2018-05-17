@@ -18,5 +18,13 @@
   },
   "dependencies": {
     "express": "^4.16.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsberry/unify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tsberry/unify/issues"
+  },
+  "homepage": "https://github.com/tsberry/unify#readme"
 }
