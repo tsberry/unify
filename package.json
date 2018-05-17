@@ -24,6 +24,14 @@
     "mysql2": "^1.5.3",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    "sequelize": "^4.37.7"
+=======
+    "mysql2": "^1.5.3",
+>>>>>>> 90fe479af63ef395ace12ff3c00ea90de5d68c4c
     "sequelize": "^4.37.6"
+>>>>>>> 225b2a9c2b7ebd36a3d72c84af79102c63efbf9a
   }
 }
