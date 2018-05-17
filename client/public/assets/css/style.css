@@ -1,0 +1,62 @@
+body,
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    padding: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.brand-logo h1 {
+    font-family: 'Ovo', serif;
+    color: #1565c0;
+}
+
+.info-1 h3 {
+    color: #1565c0;
+}
+
+.action {
+    background-color: #1565c0;
+    color: white;
+}
+
+ul {
+    float: right;
+}
+
+.info-1 {
+    padding: 50px;
+}
+
+.header {
+    position: relative; 
+    width: 100%;
+}
+
+.textbox {
+    z-index: 100;
+    position: absolute;
+    background-color: #aaaaaa8f;
+    border-radius: 10px;
+    color: white;
+    max-width: 900px;
+    max-height: 600px;
+    top: 15%; 
+    left: 15%;
+}
+
+.text-content {
+    padding: 30px;
+}
+
+.button {
+    background-color: #1565c0;
+}
+
+
