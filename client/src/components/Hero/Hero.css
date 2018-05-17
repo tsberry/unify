@@ -1,0 +1,33 @@
+.hero {
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  opacity: .2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+}
+
+.hero * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h3 {
+  color: white;
+}
+
+.hero h3 {
+  font-size: 35px;
+  padding-top: 10px;
+  margin-top: 0;
+}
