@@ -21,9 +21,14 @@
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "mysql2": "^1.5.3",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+<<<<<<< HEAD
+    "sequelize": "^4.37.7"
+=======
     "mysql2": "^1.5.3",
     "sequelize": "^4.37.6"
+>>>>>>> 225b2a9c2b7ebd36a3d72c84af79102c63efbf9a
   }
 }
