@@ -5,6 +5,7 @@ import Search from "./pages/Search";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
+import tab from "./components/rankingTab";
 
 const App = () => (
   <Router>
@@ -13,6 +14,7 @@ const App = () => (
       <Wrapper>
         <Route exact path="/" component={Home} />
         <Route exact path="/search" component={Search} />
+        <Route exact path="/tab" component={tab} />
       </Wrapper>
       <Footer />
     </div>
