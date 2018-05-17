@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
+import tab from "./components/rankingTab";
 
 const App = () => (
   <Router>
@@ -17,6 +18,7 @@ const App = () => (
         <Route exact path="/search" component={Search} />
         <Route exact path="/join" component={Signup} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/tab" component={tab} />
       </Wrapper>
       <Footer />
     </div>
