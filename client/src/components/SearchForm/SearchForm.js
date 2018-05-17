@@ -11,17 +11,17 @@ const SearchForm = props => (
       <div className="grid-x grid-padding-x">
         <div className="medium-3 large-3 cell">
           <label>State
-                    <input type="text" id="state" />
+                    <input type="text" id="state" value={props.state} onChange={props.handleInputChange}/>
           </label>
         </div>
         <div className="medium-3 large-3 cell">
           <label>Zip Code
-                    <input type="text" id="zipcode" />
+                    <input type="text" id="zipcode" value={props.zipcode} onChange={props.handleInputChange}/>
           </label>
         </div>
         <div className="medium-2 large-1 cell">
           <label>Within
-                    <input type="text" id="radius" placeholder="Miles" />
+                    <input type="text" id="radius" placeholder="Miles" value={props.radius} onChange={props.handleInputChange}/>
           </label>
         </div>
         <div className="medium-2 large-2 cell">
