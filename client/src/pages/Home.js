@@ -6,7 +6,7 @@ const Home = () => (
   <div>
     <Hero backgroundImage="./assets/img/fabian-mardi-119790-unsplash.jpg">
         <div className="textbox">
-            <div class="text-content">
+            <div className="text-content">
               <h3>The School of Your Dreams is Just a Click Away</h3>
             </div>
         </div>
