@@ -2,13 +2,32 @@ import React from "react";
 import "./SearchResults.css";
 
 const SearchResults = props => (
-  <ul className="list-group search-results">
-    {props.results.map(result => (
-      <li key={result} className="list-group-item">
-        <img alt="Dog" src={result} className="img-fluid" />
-      </li>
-    ))}
-  </ul>
+ 
+  <div className="grid-container callout secondary">
+    <div className="grid-x grid-padding-x title">
+      <div className="large-12 cell"><h3>{props.name}</h3></div>
+    </div>
+    <div className="grid-x grid-padding-x title">
+      <div className="large-12 cell"><p>{props.city}, {props.state}</p></div>
+    </div>
+    <div className="grid-x grid-padding-x title">
+      <div className="large-12 cell"><p>{props.students} Undergraduate Students</p></div>
+    </div>
+    <div className="grid-x grid-padding-x title">
+      <div className="large-12 cell"><p>Link</p></div>
+    </div>
+    <div className="grid-x grid-padding-x title">
+      <div className="large-1 cell">{props.years}</div>
+      <div className="large-1 cell">{props.ownership}</div>
+      <div className="large-1 cell">{props.locationType}</div>
+      <div className="large-1 cell">Medium</div>
+    </div>
+  </div>
+
+
+
+
+
 );
 
 export default SearchResults;

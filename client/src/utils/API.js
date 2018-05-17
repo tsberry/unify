@@ -3,12 +3,12 @@ import axios from "axios";
 export default {
     // Get colleges within distance radius of zip
     searchColleges: function (zip, distance) {
-        return axios.get(`/api/collegescoreboard/${zip}/${distance}`);
+        return axios.get(`/api/collegescoreboard/search/${zip}/${distance}`);
     },
 
     // Get the college with the given id
     getCollege: function (id) {
-        return axios.get(`/api/collegescoreboard/${id}`);
+        return axios.get(`/api/collegescoreboard/schools/${id}`);
     },
 
     // Save the given college to the database

@@ -1,13 +1,13 @@
 import React from "react";
-import "./tab.css";
+import "./RankingTab.css";
 
-const tab = props => (
+const Tab = props => (
   <div className="card">
     
     <div className="content">
     
       <ul className="tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" id="example-tabs">
-        <li className="tabs-title is-active"><a href="#panel1" aria-selected="true">Rank
+        <li className="tabs-title is-active"><a href="#panel1" ariaSelected="true">Rank
         </a></li>
         <li className="tabs-title"><a href="#panel2">Add Ranking</a></li>
   
@@ -36,4 +36,4 @@ const tab = props => (
       
 );
 
-export default tab;
+export default Tab;
