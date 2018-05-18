@@ -1182,7 +1182,6 @@ latest-version@^3.0.0:
   dependencies:
     package-json "^4.0.0"
 
-<<<<<<< HEAD
 lodash.includes@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.includes/-/lodash.includes-4.3.0.tgz#60bb98a87cb923c68ca1e51325483314849f553f"
@@ -1215,8 +1214,6 @@ lodash.set@^4.0.0:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/lodash.set/-/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
 
-=======
->>>>>>> e88e86955f44038cd675322e88d2fffb95243ff5
 lodash@^4.17.1, lodash@^4.5.1:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
@@ -1371,13 +1368,10 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-<<<<<<< HEAD
 ms@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
 
-=======
->>>>>>> e88e86955f44038cd675322e88d2fffb95243ff5
 mysql2@^1.5.3:
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/mysql2/-/mysql2-1.5.3.tgz#d905a1a06da0469828287608ce68647b8130748f"
@@ -1893,11 +1887,7 @@ seq-queue@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/seq-queue/-/seq-queue-0.0.5.tgz#d56812e1c017a6e4e7c3e3a37a1da6d78dd3c93e"
 
-<<<<<<< HEAD
-sequelize@^4.37.7:
-=======
 sequelize@^4.37.6:
->>>>>>> e88e86955f44038cd675322e88d2fffb95243ff5
   version "4.37.7"
   resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-4.37.7.tgz#a66bfb486f438c0584c1ccc8107388311ba34780"
   dependencies:
