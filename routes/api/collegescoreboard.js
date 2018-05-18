@@ -131,16 +131,79 @@ router.get("/schools/:id", function (req, res) {
             else if(response.data.results[0]["2015.student.size"] < 15000) size = "Medium";
             else size = "Large";
 
-            let majors = {};
+            let races = [];
+            races.push(
+                {
+                    name: "White",
+                    percentage: Math.round(100 * response.data.results[0]["2015"].student.demographics.race_ethnicity.white)
+                }
+            );
+            races.push(
+                {
+                    name: "Asian",
+                    percentage: Math.round(100 * response.data.results[0]["2015"].student.demographics.race_ethnicity.asian)
+                }
+            );
+            races.push(
+                {
+                    name: "Non-resident alien",
+                    percentage: Math.round(100 * response.data.results[0]["2015"].student.demographics.race_ethnicity.non_resident_alien)
+                }
+            );
+            races.push(
+                {
+                    name: "Hispanic",
+                    percentage: Math.round(100 * response.data.results[0]["2015"].student.demographics.race_ethnicity.hispanic)
+                }
+            );
+            races.push(
+                {
+                    name: "Black",
+                    percentage: Math.round(100 * response.data.results[0]["2015"].student.demographics.race_ethnicity.black)
+                }
+            );
+            races.push(
+                {
+                    name: "Two or more races",
+                    percentage: Math.round(100 * response.data.results[0]["2015"].student.demographics.race_ethnicity.two_or_more)
+                }
+            );
+            races.push(
+                {
+                    name: "Unknown",
+                    percentage: Math.round(100 * response.data.results[0]["2015"].student.demographics.race_ethnicity.unknown)
+                }
+            );
+            races.push(
+                {
+                    name: "American Indian/Alaska Native",
+                    percentage: Math.round(100 * response.data.results[0]["2015"].student.demographics.race_ethnicity.aian)
+                }
+            );
+            races.push(
+                {
+                    name: "Native Hawaiian/Pacific Islander",
+                    percentage: Math.round(100 * response.data.results[0]["2015"].student.demographics.race_ethnicity.nhpi)
+                }
+            );
+            races.sort((a,b) => b.percentage - a.percentage);
+
+            let majors = [];
             for(let program in response.data.results[0]["2015"].academics.program_percentage) {
                 if(response.data.results[0]["2015"].academics.program_percentage[program] > 0) {
                     let name;
                     for(let i = 0; i < programList.length; i++) {
                         if(programList[i]["Field"] === `program_percentage.${program}`) name = programList[i]["Name"];
                     }
-                    majors[name] = Math.round(1000 * response.data.results[0]["2015"].academics.program_percentage[program])/10;
+                    majors.push(
+                        {
+                            name: name,
+                            percentage: Math.round(1000 * response.data.results[0]["2015"].academics.program_percentage[program])/10
+                        }
+                    );
                 }
             }
+            majors.sort((a,b) => b.percentage - a.percentage);
 
             let results = {
                 id: response.data.results[0].id,
@@ -160,10 +223,10 @@ router.get("/schools/:id", function (req, res) {
                 earnings: response.data.results[0]["2013"].earnings["10_yrs_after_entry"].median,
                 loanrate: Math.round(100 * response.data.results[0]["2015"].aid.federal_loan_rate),
                 debt: response.data.results[0]["2015"].aid.median_debt_suppressed.completers.overall,
-                monthly: response.data.results[0]["2015"].aid.median_debt_suppressed.completers.monthly_payments,
+                monthly: Math.round(response.data.results[0]["2015"].aid.median_debt_suppressed.completers.monthly_payments),
                 fulltime: 100 - Math.round(100 * response.data.results[0]["2015"].student.part_time_share),
                 parttime: Math.round(100 * response.data.results[0]["2015"].student.part_time_share),
-                race: response.data.results[0]["2015"].student.demographics.race_ethnicity,
+                races: races,
                 majors: majors,
                 admissionrate: Math.round(100 * response.data.results[0]["2015"].admissions.admission_rate.overall),
                 act: response.data.results[0]["2015"].admissions.act_scores.midpoint.cumulative,
