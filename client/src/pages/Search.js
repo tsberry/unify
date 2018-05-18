@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
-import SearchResults from "../components/SearchResults/SearchResults";
+import ResultCard from "../components/ResultCard";
+import Container from "../components/Container"
 
 //import SearchResults from "../components/SearchResults";
 
@@ -35,7 +36,7 @@ class Search extends Component {
 
   render() {
     return (
-        <div>
+        <Container>
             <SearchForm
               handleFormSubmit={this.handleFormSubmit}
               handleInputChange={this.handleInputChange}
@@ -45,18 +46,18 @@ class Search extends Component {
             />
             <ul>
               {this.state.schools.map(school => (
-                <SearchResults
+                <ResultCard
                   name = {school.name}
                   city = {school.city}
                   state = {school.state}
                   students = {school.size}
                   years = {school.type}
                   ownership = {school.ownership}
-                  loacationType = {school.location}
+                  location = {school.location}
                 />
               ))}
             </ul>
-        </div>
+        </Container>
     );
   }
 }

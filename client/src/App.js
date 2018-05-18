@@ -6,7 +6,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+//import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import RankingTab from "./components/RankingTab";
 
@@ -19,10 +19,10 @@ const App = () => (
         <Route exact path="/search" component={Search} />
         <Route exact path="/join" component={Signup} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/Tab" component={RankingTab} />
         <Route path="/profile" component={Profile} />
-        <Route exact path="/tab" component={RankingTab} />
       </Wrapper>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   </Router>
 );
