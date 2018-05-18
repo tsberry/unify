@@ -127,8 +127,8 @@ router.get("/schools/:id", function (req, res) {
             }
 
             let size;
-            if(response.data.results[0]["2015.student.size"] < 2000) size = "Small";
-            else if(response.data.results[0]["2015.student.size"] < 15000) size = "Medium";
+            if(response.data.results[0]["2015"].student.size < 2000) size = "Small";
+            else if(response.data.results[0]["2015"].student.size < 15000) size = "Medium";
             else size = "Large";
 
             let races = [];
