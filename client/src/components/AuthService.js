@@ -4,13 +4,13 @@ export default class AuthService {
 
     login = (username, password) => {
         // Get a token
-        return axios.post('api/user/login', {username: username, password: password})
-        .then(res => {
-            // set the token once the user logs in
-            this.setToken(res.data.token);
-            // return the rest of the response
-            return res;
-        });
+        return axios.post('api/user/login', { username: username, password: password })
+            .then(res => {
+                // set the token once the user logs in
+                this.setToken(res.data.token);
+                // return the rest of the response
+                return res;
+            });
     };
 
     getProfile = () => {

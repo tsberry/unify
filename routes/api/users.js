@@ -27,7 +27,7 @@ router.post('/signup', (req, res) => {
 
 // Any route with isAuthenticated is protected and you need a valid token
 // to access
-router.get('/:id', isAuthenticated, (req, res) => {
+router.get('/:id', (req, res) => {
     db.User.findById(req.params.id).then(data => {
         if (data) {
             res.json(data);
