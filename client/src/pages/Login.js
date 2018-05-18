@@ -54,9 +54,10 @@ class Login extends Component {
                    id="pwd"
                    onChange={this.handleChange}/>
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="button">Submit</button>
+          {/* <button type="submit" className="btn btn-primary">Submit</button> */}
         </form>
-        <p><Link to="/signup">Go to Signup</Link></p>
+        <p><Link to="/join">or Sign-up!</Link></p>
       </div>
 
     );
