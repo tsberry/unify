@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import AuthService from '../components/AuthService';
 import {Link} from 'react-router-dom';
+import AuthService from '../components/AuthService';
+import API from '../utils/API';
 
-class Login extends Component {
+class Signup extends Component {
   constructor() {
     super();
     this.Auth = new AuthService();
@@ -16,27 +17,28 @@ class Login extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-
-    this.Auth.login(this.state.username, this.state.password)
+    API.signUpUser(this.state.username, this.state.password)
       .then(res => {
-        // once user is logged in
-        // take them to their profile page
-        this.props.history.replace(`/`);
+        console.log(res.data);
+        // once the user has signed up
+        // send them to the login page
+        this.props.history.replace('/login');
       })
-      .catch(err => alert(err));
+      .catch(err => alert(err.message));
   };
 
   handleChange = event => {
     const {name, value} = event.target;
     this.setState({
-        [name]: value
+      [name]: value
     });
   };
 
   render() {
     return (
       <div className="container">
-        <h4>Login</h4>
+
+        <h4>Join</h4>
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username</label>
@@ -56,11 +58,10 @@ class Login extends Component {
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>
-        <p><Link to="/signup">Go to Signup</Link></p>
+        <p><Link to="/login">Go to Login</Link></p>
       </div>
-
     );
   }
 }
 
-export default Login;
+export default Signup;
