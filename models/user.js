@@ -34,7 +34,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     User.associate = function (models) {
-        User.belongsToMany(models.SavedCollege, {
+        User.belongsToMany(models.College, {
             through: "UserCollege",
             foreignKey: "User"
         });

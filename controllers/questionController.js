@@ -5,7 +5,7 @@ module.exports = {
         db.Question.create( 
             { 
                 question: req.body.question,
-                SavedCollegeId: req.body.SavedCollegeId,
+                CollegeId: req.body.CollegeId,
                 UserId: req.body.UserId
             } 
         )

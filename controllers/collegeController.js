@@ -2,7 +2,7 @@ const db = require("../models");
 
 module.exports = {
     saveCollege: function (req, res) {
-        db.SavedCollege
+        db.College
             .findOrCreate({
                 where: {
                     queryId: req.body.queryId
@@ -24,7 +24,7 @@ module.exports = {
             }
         })
         .then(user => {
-            db.SavedCollege
+            db.College
             .find({
                 where: {
                     queryId: req.params.collegeId
@@ -38,7 +38,7 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     getCollege: function (req, res) {
-        db.SavedCollege
+        db.College
             .findOne({
                 where: {
                     queryId: req.params.id

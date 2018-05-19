@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var SavedCollege = sequelize.define("SavedCollege", {
+    var College = sequelize.define("College", {
         name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -38,18 +38,18 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    SavedCollege.associate = function (models) {
-        SavedCollege.belongsToMany(models.User, {
+    College.associate = function (models) {
+        College.belongsToMany(models.User, {
             through: "UserCollege",
             foreignKey: "College"
         });
 
-        SavedCollege.hasMany(models.Question, {
+        College.hasMany(models.Question, {
             foreignKey: {
                 allowNull: false
             }
         });
     };
 
-    return SavedCollege;
+    return College;
 };

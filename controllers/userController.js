@@ -10,7 +10,7 @@ module.exports = {
         })
         .then(user => {
             console.log(user);
-            user.getSavedColleges({})
+            user.getColleges({})
             .then(colleges => res.json({user: user, colleges: colleges}))
         })
         .catch(err => res.status(422).json(err));

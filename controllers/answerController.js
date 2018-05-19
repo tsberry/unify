@@ -6,7 +6,7 @@ module.exports = {
             { 
                 answer: req.body.answer,
                 QuestionId: req.body.QuestionId,
-                SavedCollegeId: req.body.SavedCollegeId,
+                CollegeId: req.body.CollegeId,
                 UserId: req.body.UserId
             } 
         )
