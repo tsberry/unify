@@ -41,10 +41,9 @@ module.exports = function (sequelize, DataTypes) {
     SavedCollege.associate = function (models) {
         SavedCollege.belongsToMany(models.User, {
             through: "UserCollege",
-            foreignKey: {
-                allowNull: true
-            }
+            foreignKey: "College"
         });
+
         SavedCollege.hasMany(models.Question, {
             foreignKey: {
                 allowNull: false
