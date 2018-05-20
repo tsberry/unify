@@ -44,4 +44,15 @@ select {
     max-width: 330px;
 }
 
+.container {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.callout {
+    padding-left: 20px;
+  }
 

@@ -1,0 +1,7 @@
+tbody {
+    overflow-y:scroll
+}
+
+.accordion-content {
+    display: block;
+}

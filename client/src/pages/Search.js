@@ -51,9 +51,11 @@ class Search extends Component {
                   city = {school.city}
                   state = {school.state}
                   students = {school.size}
+                  url = {school.url}
                   years = {school.type}
                   ownership = {school.ownership}
                   location = {school.location}
+                  size = {school.size}
                 />
               ))}
             </ul>
