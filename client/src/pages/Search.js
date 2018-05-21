@@ -50,10 +50,11 @@ class Search extends Component {
                   name = {school.name}
                   city = {school.city}
                   state = {school.state}
-                  students = {school.size}
+                  students = {school.students}
                   years = {school.type}
                   ownership = {school.ownership}
                   location = {school.location}
+                  size = {school.size}
                 />
               ))}
             </ul>
