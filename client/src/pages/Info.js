@@ -11,6 +11,8 @@ import Tab6 from "../components/Tab6/Tab6";
 import Rating from "../components/Rating";
 import API from "../utils/API";
 import GridX from "../components/GridX/GridX";
+//import AuthService from "../components/AuthService";
+//const auth = new AuthService();
 
 class Info extends Component {
 
