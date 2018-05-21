@@ -12,7 +12,11 @@ import Rating from "../components/Rating";
 import API from "../utils/API";
 import AuthService from "../components/AuthService";
 import GridX from "../components/GridX/GridX";
+
+import RankingTab from "../components/RankingTab/RankingTab";
+
 const auth = new AuthService();
+
 
 class Info extends Component {
 
@@ -104,7 +108,12 @@ class Info extends Component {
                         />
                     </GridX>
                     <GridX>
+
+                        <Rating/>
+                        <RankingTab />
+
                         <Rating />
+
                     </GridX>
                 </GridContainer>
             </Container>
