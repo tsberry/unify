@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import AuthService from "../AuthService";
 import "./Navbar.css";
 const auth = new AuthService();
-
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 const Navbar = props => (
 
@@ -13,58 +12,12 @@ const Navbar = props => (
             <span>Find the university for <i>you</i>.</span>
             <ul className="menu">
                 <li><Link to="/search">Search</Link></li>
-                <li><Link to="/login">Login</Link></li>
-                <li><button onClick={auth.logout}>Logout</button></li>
-                <li><Link to="/join" className="action">Join</Link></li>
+                {(auth.loggedIn()) ? <li onClick={auth.logout}><Link to="/">Log Out</Link></li> : <li><Link to="/login">Login</Link></li>}
+                {(auth.loggedIn()) ? <li><Link to="/saved" className="action">Saved</Link></li> : <li><Link to="/join" className="action">Join</Link></li>}
             </ul>
         </div>
     </nav>
 
-
-
-  // <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  //   <Link className="navbar-brand" to="/">
-  //     Pupster
-  //   </Link>
-  //   <div>
-  //     <ul className="navbar-nav">
-  //       <li
-  //         className={
-  //           window.location.pathname === "/" ||
-  //           window.location.pathname === "/about"
-  //             ? "nav-item active"
-  //             : "nav-item"
-  //         }
-  //       >
-  //         <Link to="/" className="nav-link">
-  //           About
-  //         </Link>
-  //       </li>
-  //       <li
-  //         className={
-  //           window.location.pathname === "/discover"
-  //             ? "nav-item active"
-  //             : "nav-item"
-  //         }
-  //       >
-  //         <Link to="/discover" className="nav-link">
-  //           Discover
-  //         </Link>
-  //       </li>
-  //       <li
-  //         className={
-  //           window.location.pathname === "/search"
-  //             ? "nav-item active"
-  //             : "nav-item"
-  //         }
-  //       >
-  //         <Link to="/search" className="nav-link">
-  //           Search
-  //         </Link>
-  //       </li>
-  //     </ul>
-  //   </div>
-  // </nav>
 );
 
 export default Navbar;
