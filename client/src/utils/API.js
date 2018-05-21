@@ -14,21 +14,35 @@ export default {
     // Save the given college to the database
     saveCollege: function (college) {
         let collegeData = {
-            queryId: college.id,
+            id: college.id,
             name: college.name,
+            city: college.city,
+            state: college.state,
+            students: college.students,
+            size: college.size,
+            years: college.type,
+            location: college.location,
+            ownership: college.ownership,
             lat: college.lat,
             lon: college.lon
         };
         return axios.post("/api/colleges", collegeData);
     },
 
-    // Gets a single user by id
-    getUser: (id) => {
+    saveUser: (userId, collegeId) => {
+        return axios.post(`/api/colleges/${collegeId}/${userId}`);
+    },
+
+    deleteUser: (userId, collegeId) => {
+        return axios.delete(`/api/colleges/${collegeId}/${userId}`);
+    },
+
+    getColleges: (id) => {
         return axios.get(`/api/user/${id}`);
     },
     
     // sign up a user to our service
-    signUpUser: (username, password) => {
-        return axios.post('api/user/signup', { username: username, password: password });
+    signUpUser: (username, email, password) => {
+        return axios.post('api/user/signup', { username: username, email: email, password: password });
     }
 };
