@@ -1,5 +1,6 @@
 import React from "react";
 import "./SearchResults.css";
+import RankingTab from "../RankingTab";
 
 const SearchResults = props => (
  
@@ -22,9 +23,9 @@ const SearchResults = props => (
       <div className="large-1 cell">{props.locationType}</div>
       <div className="large-1 cell">Medium</div>
     </div>
+
+    <RankingTab/>
   </div>
-
-
 
 
 
