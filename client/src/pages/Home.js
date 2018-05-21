@@ -38,7 +38,7 @@ const Home = () => (
                     Step 3
                 </h5>
                 <p>
-                    Share your college experience and add an depth review. You can also utilize our unique search feature to get an inside look at universities across the country.
+                    Share your college experience and add in-depth review. You can also utilize our unique search feature to get an inside look at universities across the country.
                 </p>
             </div>
         </div>

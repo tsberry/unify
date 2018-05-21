@@ -104,7 +104,12 @@ class Info extends Component {
                         />
                     </GridX>
                     <GridX>
+
+                        <Rating/>
+                        <RankingTab />
+
                         <Rating />
+
                     </GridX>
                 </GridContainer>
             </Container>
