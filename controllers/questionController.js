@@ -2,11 +2,11 @@ const db = require("../models");
 
 module.exports = {
     saveQuestion: function (req, res) {
-        db.Question.Create( 
+        db.Question.create( 
             { 
                 question: req.body.question,
-                SavedCollegeId: req.body.SavedCollegeId
-                // UserId: req.user
+                CollegeId: req.body.CollegeId,
+                UserId: req.body.UserId
             } 
         )
             .then(data => res.json(data))
