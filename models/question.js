@@ -13,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         });
 
-        Question.belongsTo(models.SavedCollege, {
+        Question.belongsTo(models.College, {
             foreignKey: {
                 allowNull: false
             }
