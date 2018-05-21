@@ -9,7 +9,6 @@ module.exports = {
             }
         })
         .then(user => {
-            console.log(user);
             user.getColleges({})
             .then(colleges => res.json({user: user, colleges: colleges}))
         })
