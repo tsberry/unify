@@ -8,6 +8,34 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        city: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        state: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        students: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        size: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        years: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        ownership: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         lat: {
             type: DataTypes.STRING,
             allowNull: false
