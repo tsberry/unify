@@ -1,5 +1,4 @@
 import React from "react";
-//import "./MajorItem.css";
 
 const MajorItem = props => (
     <tr>

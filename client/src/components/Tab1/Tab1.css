@@ -1,7 +1,4 @@
-tbody {
-    overflow-y:scroll
-}
-
-.accordion-content {
-    display: block;
+.card-section {
+    height: 300px;
+    overflow: scroll;
 }

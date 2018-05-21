@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import Container from "../components/Container"
 import TitleCard from "../components/TitleCard";
-import TabsWrapper from "../components/TabsWrapper"
+import GridContainer from "../components/GridContainer"
 import Tab1 from "../components/Tab1/Tab1";
+import Tab2 from "../components/Tab2/Tab2";
+import Tab3 from "../components/Tab3/Tab3";
+import Tab4 from "../components/Tab4/Tab4";
+import Tab5 from "../components/Tab5/Tab5";
+import Tab6 from "../components/Tab6/Tab6";
 import API from "../utils/API";
+import GridX from "../components/GridX/GridX";
 
 class Info extends Component {
 
@@ -23,21 +29,46 @@ class Info extends Component {
     render() {
         return (
             <Container>
-                <TitleCard
-                    name={this.state.school.name}
-                    city={this.state.school.city}
-                    state={this.state.school.state}
-                    url={this.state.school.url}
-                />
-                <TabsWrapper>
-                    <Tab1
-                        majors={this.state.majors}
-                    />
-                    {/* <Tab2/>
-                <Tab3/>
-                <Tab4/>
-                <Tab5/> */}
-                </TabsWrapper>
+                <GridContainer>
+                    <GridX>
+                        <TitleCard
+                            name={this.state.school.name}
+                            city={this.state.school.city}
+                            state={this.state.school.state}
+                            url={this.state.school.url}
+                        />
+                    </GridX>
+                    <GridX>
+                        <Tab1
+                            majors={this.state.majors}
+                        />
+                        <Tab3
+                            image="../assets/img/annie-spratt-608001-unsplash.jpg"
+                            alt="academics" />
+                    </GridX>
+                    <GridX>
+                        <Tab5
+                            sat={this.state.school.sat}
+                            act={this.state.school.act}
+                        />
+                        <Tab2
+                            loanrate={this.state.school.loanrate}
+                            debt={this.state.school.debt}
+                            monthly={this.state.school.monthly}
+                        />
+                        <Tab4
+                            gradrate={this.state.school.gradrate}
+                            earnings={this.state.school.earnings}
+                        />
+                    </GridX>
+                    <GridX>
+                        <Tab6
+                            students={this.state.school.students}
+                            fulltime={this.state.school.fulltime}
+                            parttime={this.state.school.parttime}
+                        />
+                    </GridX>
+                </GridContainer>
             </Container>
         );
     }
