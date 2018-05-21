@@ -16,7 +16,17 @@ app.use(bodyParser.json());
 
 app.use(routes);
 
-db.sequelize.sync({force: true})
+// Error handling
+app.use(function (err, req, res, next) {
+    if (err.name === 'UnauthorizedError') { // Send the error rather than to show it on the console
+        res.status(401).send(err);
+    }
+    else {
+        next(err);
+    }
+});
+
+db.sequelize.sync({ force: true })
     .then(function () {
         app.listen(PORT, function () {
             console.log(`🌎 ==> Server now on port ${PORT}!`);
