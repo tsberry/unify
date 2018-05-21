@@ -45,12 +45,11 @@ class RankingTab extends React.Component {
                 <div className="tabs-content" data-tabs-content="example-tabs">
                     <div className="tabs-panel is-active" id="panel1">
                         <p><h3>Rank this School</h3></p>
-                        <p></p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h2>Rating from state: {rating}</h2>
+                        <p>Faculty: {rating}</p>
+                <p>Campus Life: {rating}</p>
+                <p>Local Food: {rating}</p>
+                <p>Transportation: {rating}</p>
+                <p>Security: {rating}</p>
                 <StarRatingComponent
                     name="rate1"
                     starCount={5}
@@ -58,6 +57,8 @@ class RankingTab extends React.Component {
                     onStarClick={this.onStarClick.bind(this)}
                     onStarClickHalfStar={this.onStarClick.bind(this)}
                 />
+                    </div>
+                </div>
             </div>
         </div>
 
