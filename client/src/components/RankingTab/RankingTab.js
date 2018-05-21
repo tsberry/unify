@@ -34,7 +34,7 @@ class RankingTab extends React.Component {
         return (<div className="card">
 
             <div className="content">
-         
+
                 {/* <ul className="tabs" data-responsive-accordion-tabs="tabs medium-accordion large-tabs" id="example-tabs">
                     <li className="tabs-title is-active"><a href="#panel1" ariaSelected="true">Rank
         </a></li>
@@ -46,17 +46,18 @@ class RankingTab extends React.Component {
                     <div className="tabs-panel is-active" id="panel1">
                         <p><h3>Rank this School</h3></p>
                         <p>Faculty: {rating}</p>
-                <p>Campus Life: {rating}</p>
-                <p>Local Food: {rating}</p>
-                <p>Transportation: {rating}</p>
-                <p>Security: {rating}</p>
-                <StarRatingComponent
-                    name="rate1"
-                    starCount={5}
-                    value={this.state.rating}
-                    onStarClick={this.onStarClick.bind(this)}
-                    onStarClickHalfStar={this.onStarClick.bind(this)}
-                />
+                        <p>Campus Life: {rating}</p>
+                        <p>Local Food: {rating}</p>
+                        <p>Transportation: {rating}</p>
+                        <p>Security: {rating}</p>
+                        <StarRatingComponent
+                            name="rate1"
+                            starCount={5}
+                            value={this.state.rating}
+                            onStarClick={this.onStarClick.bind(this)}
+                            onStarClickHalfStar={this.onStarClick.bind(this)}
+                            renderStarIcon={(index, value) => <span className={(index > value) ? "fa fa-star" : "fa fa-star checked"}></span>}
+                        />
                     </div>
                 </div>
             </div>
