@@ -1,6 +1,6 @@
 import React from "react";
 // import "./RankingTab.css";
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import StarRatingComponent from 'react-star-rating-component';
 
 
