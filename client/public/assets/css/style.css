@@ -6,28 +6,8 @@ h4 {
     font-family: 'Montserrat', sans-serif;
 }
 
-nav {
-    padding: 10px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-}
-
-.brand-logo h1 {
-    font-family: 'Ovo', serif;
-    color: #1565c0;
-}
-
 .info-1 h3 {
     color: #1565c0;
-}
-
-.action {
-    background-color: #1565c0;
-    color: white;
-}
-
-ul {
-    float: right;
 }
 
 .info-1 {
@@ -59,4 +39,20 @@ ul {
     background-color: #1565c0;
 }
 
+.form-control, 
+select {
+    max-width: 330px;
+}
+
+/* .container {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+} */
+
+.callout {
+    padding-left: 20px;
+  }
 

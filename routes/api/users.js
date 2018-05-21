@@ -2,11 +2,13 @@ const router = require("express").Router();
 const db = require("../../models");
 const jwt = require('jsonwebtoken');
 const isAuthenticated = require("../../config/auth");
+const userController = require("../../controllers/userController");
 
 router.post('/login', (req, res) => {
     db.User.findOne({
         where: { username: req.body.username }
     }).then(user => {
+        console.log(user);
         const isMatch = user.validPassword(req.body.password);
         console.log(isMatch);
         if (isMatch) {
@@ -27,14 +29,6 @@ router.post('/signup', (req, res) => {
 
 // Any route with isAuthenticated is protected and you need a valid token
 // to access
-router.get('/:id', isAuthenticated, (req, res) => {
-    db.User.findById(req.params.id).then(data => {
-        if (data) {
-            res.json(data);
-        } else {
-            res.status(404).send({ success: false, message: 'No user found' });
-        }
-    }).catch(err => res.status(400).send(err));
-});
+router.get('/:id', userController.getColleges);
 
 module.exports = router;

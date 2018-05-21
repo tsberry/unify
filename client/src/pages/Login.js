@@ -36,29 +36,28 @@ class Login extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Login</h1>
+        <h4>Login</h4>
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-group">
-            <label htmlFor="username">Username:</label>
+            <label htmlFor="username">Username</label>
             <input className="form-control"
-                   placeholder="Username goes here..."
                    name="username"
                    type="text"
                    id="username"
                    onChange={this.handleChange}/>
           </div>
           <div className="form-group">
-            <label htmlFor="pwd">Password:</label>
+            <label htmlFor="pwd">Password</label>
             <input className="form-control"
-                   placeholder="Password goes here..."
                    name="password"
                    type="password"
                    id="pwd"
                    onChange={this.handleChange}/>
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="button">Submit</button>
+          {/* <button type="submit" className="btn btn-primary">Submit</button> */}
         </form>
-        <p><Link to="/signup">Go to Signup</Link></p>
+        <p><Link to="/join">or Sign-up!</Link></p>
       </div>
 
     );

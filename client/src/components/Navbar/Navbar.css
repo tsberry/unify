@@ -7,6 +7,7 @@ nav {
     padding: 10px;
     padding-bottom: 20px;
     padding-left: 20px;
+    border-bottom: 1px solid #eaeaea;
 }
 
 .brand-logo h1 {
@@ -19,6 +20,6 @@ nav {
     color: white;
 }
 
-ul {
+nav ul {
     float: right;
 }
