@@ -30,6 +30,11 @@ module.exports = function (sequelize, DataTypes) {
         associatedSchoolId: {
             type: DataTypes.INTEGER,
             allowNull: true
+        },
+
+        type: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     });
 

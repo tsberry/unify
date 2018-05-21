@@ -14,13 +14,13 @@ export default {
     // Save the given college to the database
     saveCollege: function (college) {
         let collegeData = {
-            id: college.id,
+            queryId: college.id,
             name: college.name,
             city: college.city,
             state: college.state,
             students: college.students,
             size: college.size,
-            years: college.type,
+            type: college.type,
             location: college.location,
             ownership: college.ownership,
             lat: college.lat,
@@ -41,8 +41,16 @@ export default {
         return axios.get(`/api/user/${id}`);
     },
     
+    saveQuestion: (question, userId, collegeId) => {
+        return axios.post('/api/question', { question: question, userId: userId, collegeId: collegeId });
+    },
+
+    saveAnswer: (answer, questionId, userId, collegeId) => {
+        return axios.post('api/answer', { answer: answer, questionId: questionId, userId: userId, collegeId: collegeId });
+    },
+
     // sign up a user to our service
-    signUpUser: (username, email, password) => {
-        return axios.post('api/user/signup', { username: username, email: email, password: password });
+    signUpUser: (username, email, password, type) => {
+        return axios.post('api/user/signup', { username: username, email: email, password: password, type: type });
     }
 };
