@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "../components/Hero";
+import Hero from "../components/Hero"
 
 
 const Home = () => (
@@ -7,38 +7,38 @@ const Home = () => (
     <Hero backgroundImage="./assets/img/fabian-mardi-119790-unsplash.jpg">
         <div className="textbox">
             <div className="text-content">
-              <h3>The School of Your Dreams is Just a Click Away</h3>
+              <h3>The school of your dreams is just a click away...</h3>
             </div>
         </div>
     </Hero>
     <div className="grid-container info-1">
         <div className="grid-x grid-padding-x title">
-            <div className="cell"><h3>How it Works</h3></div>
+            <div className="cell"><h3>How it works:</h3></div>
         </div>
         <br/>
         <div className="grid-x grid-padding-x">
             <div className="cell medium-12 large-4">
                 <h5>
-                    Something
+                    Step 1
                 </h5>
                 <p>
-                    Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae.
+                    Create your user login.
                 </p>
             </div>
             <div className="cell medium-12 large-4">
                 <h5>
-                    Something Else
+                    Step 2
                 </h5>
                 <p>
-                    Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae.
+                    Verify if you're a student, alumni or a prospective college student.
                 </p>
             </div>
             <div className="cell medium-12 large-4">
                 <h5>
-                    Another Thing
+                    Step 3
                 </h5>
                 <p>
-                    Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae.
+                    Share your college experience and add an depth review. You can also utilize our unique search feature to get an inside look at universities across the country.
                 </p>
             </div>
         </div>
