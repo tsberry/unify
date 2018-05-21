@@ -17,7 +17,7 @@ class Signup extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.signUpUser(this.state.username, this.state.email, this.state.password)
+    API.signUpUser(this.state.username, this.state.email, this.state.password, "prospect")
       .then(res => {
         console.log(res.data);
         // once the user has signed up
@@ -42,8 +42,8 @@ class Signup extends Component {
         <br/>
         <form onSubmit={this.handleFormSubmit}>
           <label>Are you a...?</label>
-            <select>
-              <option value="student">Prospective Student</option>
+            <select name="type" onChange={this.handleChange}>
+              <option value="prospect">Prospective Student</option>
               <option value="alumn">Alumn</option>
             </select>
 

@@ -5,15 +5,16 @@ module.exports = {
         db.College
             .findOrCreate({
                 where: {
-                    queryId: req.body.id
+                    queryId: req.body.queryId
                 },
                 defaults: {
+                    queryId: req.body.queryId,
                     name: req.body.name,
                     city: req.body.city,
                     state: req.body.state,
                     students: req.body.students,
                     size: req.body.size,
-                    years: req.body.type,
+                    type: req.body.type,
                     location: req.body.location,
                     ownership: req.body.ownership,
                     lat: req.body.lat,
