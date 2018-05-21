@@ -1,10 +1,10 @@
 import React from "react";
-import "./RankingTab.css";
+// import "./RankingTab.css";
 import ReactDOM from 'react-dom';
 import StarRatingComponent from 'react-star-rating-component';
 
 
-class Tab extends React.Component {
+class RankingTab extends React.Component {
     constructor() {
         super();
 
@@ -78,4 +78,4 @@ class Tab extends React.Component {
     }
 }
 
-export default Tab;
+export default RankingTab;

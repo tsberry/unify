@@ -11,6 +11,7 @@ import Tab6 from "../components/Tab6/Tab6";
 import Rating from "../components/Rating";
 import API from "../utils/API";
 import GridX from "../components/GridX/GridX";
+import RankingTab from "../components/RankingTab/RankingTab";
 
 class Info extends Component {
 
@@ -73,6 +74,7 @@ class Info extends Component {
                     </GridX>
                     <GridX>
                         <Rating/>
+                        <RankingTab />
                     </GridX>
                 </GridContainer>
             </Container>
