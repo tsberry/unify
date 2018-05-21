@@ -24,7 +24,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         },
-        years: {
+        type: {
             type: DataTypes.STRING,
             allowNull: false
         },
