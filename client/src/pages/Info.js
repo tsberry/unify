@@ -25,6 +25,7 @@ class Info extends Component {
             .then(res => {
                 console.log(res.data);
                 this.setState({ school: res.data, majors: res.data.majors, races: res.data.races })
+                API.saveCollege(res.data)
             }).catch(err => console.log(err));
     }
 
