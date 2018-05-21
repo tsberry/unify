@@ -19,10 +19,6 @@ const App = () => (
         <Route exact path="/search" component={Search} />
         <Route exact path="/join" component={Signup} />
         <Route exact path="/login" component={Login} />
-
-        <Route path="/profile" component={Profile} />
-=======
-
         <Route exact path="/info/:id" component={Info} />
         {/* <Route exact path="/saved" component={Saved} /> */}
       </Wrapper>
