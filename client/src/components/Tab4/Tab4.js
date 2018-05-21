@@ -7,9 +7,9 @@ class Tab4 extends Component {
     render(){
         return(
             <div className="cell medium-12 large-4">
-            <div className="card">
+            <div className="card grad">
                 <div className="card-divider">
-                    <h4>Graduation</h4>
+                    <p>Graduation</p>
                 </div>
                 <div className="card-section">
                     <h3><b>{this.props.gradrate}%</b> Graduation Rate</h3>

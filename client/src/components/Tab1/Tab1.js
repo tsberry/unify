@@ -10,9 +10,9 @@ class Tab1 extends Component {
                 <div className="cell medium-12 large-6">
                     <div className="card">
                         <div className="card-divider">
-                            <h4>Academic Programs</h4>
+                            <p>Academic Programs</p>
                         </div>
-                        <div className="card-section">
+                        <div className="card-section majors">
                             <table>
                                 <tbody>
                                     {this.props.majors.map(major => (

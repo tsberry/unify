@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Info from "./pages/Info";
 import Navbar from "./components/Navbar";
-//import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import RankingTab from "./components/RankingTab";
 
@@ -24,7 +24,7 @@ const App = () => (
         <Route path="/profile" component={Profile} />
         <Route exact path="/info/:id" component={Info} />
       </Wrapper>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   </Router>
 );

@@ -7,9 +7,9 @@ class Tab5 extends Component {
     render(){
         return(
         <div className="cell medium-12 large-4">
-            <div className="card">
+            <div className="card scores">
                 <div className="card-divider">
-                    <h4>Test Scores</h4>
+                    <p>Test Scores</p>
                 </div>
                 <div className="card-section">
                     <h4>SAT and ACT Scores</h4>

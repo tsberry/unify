@@ -8,6 +8,7 @@ import Tab3 from "../components/Tab3/Tab3";
 import Tab4 from "../components/Tab4/Tab4";
 import Tab5 from "../components/Tab5/Tab5";
 import Tab6 from "../components/Tab6/Tab6";
+import Rating from "../components/Rating";
 import API from "../utils/API";
 import GridX from "../components/GridX/GridX";
 
@@ -15,14 +16,15 @@ class Info extends Component {
 
     state = {
         school: {},
-        majors: []
+        majors: [],
+        races: []
     }
 
     componentDidMount() {
         API.getCollege(this.props.match.params.id)
             .then(res => {
                 console.log(res.data);
-                this.setState({ school: res.data, majors: res.data.majors })
+                this.setState({ school: res.data, majors: res.data.majors, races: res.data.races })
             }).catch(err => console.log(err));
     }
 
@@ -66,7 +68,11 @@ class Info extends Component {
                             students={this.state.school.students}
                             fulltime={this.state.school.fulltime}
                             parttime={this.state.school.parttime}
+                            races={this.state.races}
                         />
+                    </GridX>
+                    <GridX>
+                        <Rating/>
                     </GridX>
                 </GridContainer>
             </Container>

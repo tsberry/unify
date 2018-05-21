@@ -7,21 +7,19 @@ class Tab2 extends Component {
     render(){
         return(
             <div className="cell medium-12 large-4">
-            <div className="card">
+            <div className="card finance">
                 <div className="card-divider">
-                    <h4>Financial Aid & Debt</h4>
+                    <p>Financial Aid & Debt</p>
                 </div>
-                <div className="card-section">
-                    <h4>Students Receiving Federal Loans</h4>
-                    <h1>{this.props.loanrate}%</h1>
-                    <p>At some schools where few students borrow federal loans, the typical undergraduate may leave school with $0 in debt.</p>
+                <div className="card-section content">
+                    <p>Students Receiving Federal Loans</p>
+                    <h4>{this.props.loanrate}%</h4>
                     <hr />
-                    <h4>Typical Total Debt After Graduation</h4>
-                    <h1>{this.props.debt}</h1>
-                    <p>For undergraduate borrowers who complete college.</p>
+                    <p>Typical Total Debt After Graduation</p>
+                    <h4>{this.props.debt}</h4>
+                    <p>*For undergraduate borrowers who complete college.</p>
                     <hr />
-                    <h4>Typical Monthly Loan Payment</h4>
-                    <h1>${this.props.monthly}</h1>
+                    <p>Typical Loan Payment:   <b>${this.props.monthly} / mon</b></p>
                 </div>
             </div>
         </div>
