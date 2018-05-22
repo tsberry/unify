@@ -43,26 +43,6 @@ module.exports = function (sequelize, DataTypes) {
         lon: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        ratingFor_Transport: {
-            type: DataTypes.FLOAT,
-            allowNull: true
-        },
-        ratingFor_Food: {
-            type: DataTypes.FLOAT,
-            allowNull: true
-        },
-        ratingFor_Faculty: {
-            type: DataTypes.FLOAT,
-            allowNull: true
-        },
-        ratingFor_CampusLife: {
-            type: DataTypes.FLOAT,
-            allowNull: true
-        },
-        ratingFor_Security: {
-            type: DataTypes.FLOAT,
-            allowNull: true
         }
     });
 
