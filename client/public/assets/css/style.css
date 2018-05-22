@@ -10,10 +10,11 @@ h4 {
     background-color: #1565c0;
 }
 
-button:hover,
-button:active {
-    color: white;
-}
+/* button a:hover,
+button a:active,
+button a:visited {
+    color: white !important;
+} */
 
 .form-control, 
 select {
