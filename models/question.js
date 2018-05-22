@@ -15,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
 
         Question.belongsTo(models.College, {
             foreignKey: {
-                allowNull: false
+                allowNull: false,
             }
         });
 
