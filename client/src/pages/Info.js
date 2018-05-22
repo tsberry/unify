@@ -39,7 +39,7 @@ class Info extends Component {
                         .then(res2 => {
                             API.getSavedCollege(this.props.match.params.id)
                                 .then(res3 => {
-                                    this.setState({ questions: res3.data.college.Questions, ratings: res3.data.college.Ratings, id: res3.data.college.id });
+                                    this.setState({ questions: res3.data.college.Questions, ratings: res3.data.ratings, id: res3.data.college.id });
                                     console.log(res3.data.college.Questions);
                                     if (auth.loggedIn()) {
                                         API.getColleges(auth.getProfile().id)
@@ -123,7 +123,7 @@ class Info extends Component {
                         <Map />
                     </GridX>
                     <GridX>
-                        <Rating />
+                        <Rating ratings={this.state.ratings} />
                         <RankingTab school={this.state.id} />
                     </GridX>
                 </GridContainer>

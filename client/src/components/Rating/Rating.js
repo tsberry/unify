@@ -17,7 +17,7 @@ class Rating extends Component {
                             <span className="fa fa-star checked"></span>
                             <span className="fa fa-star checked"></span>
                             <span className="fa fa-star"></span>
-                            <p>4.1 average based on 254 reviews.</p>
+                            <p>{this.props.ratings.reduce(((total, rating) => total + rating.transport + rating.food + rating.campuslife + rating.security + rating.faculty), 0)} average based on 254 reviews.</p>
                             <hr />
                         </div>
                     </div>
@@ -50,7 +50,7 @@ class Rating extends Component {
                         </div>
                         <div className="middle">
                             <div className="bar-container">
-                                <div className="bar-3"></div>
+                                <div style={{width: 20 + "%"}} className="bar-3"></div>
                             </div>
                         </div>
                         <div className="side right">
