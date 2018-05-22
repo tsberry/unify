@@ -3,30 +3,13 @@ import { Link } from 'react-router-dom';
 import AuthService from '../components/AuthService';
 import API from '../utils/API';
 import Autosuggest from "react-autosuggest";
-import schoolList from "./schools.json";
 import "./theme.css";
 
-const getSuggestions = value => {
-    const inputValue = value.trim().toLowerCase();
-    const inputLength = inputValue.length;
 
-    return inputLength === 0 ? [] : schoolList.filter(school =>
-        school.NAME.toLowerCase().slice(0, inputLength) === inputValue
-    );
-};
-
-const getSuggestionValue = suggestion => suggestion.NAME;
-
-// Use your imagination to render suggestions.
-const renderSuggestion = suggestion => (
-    <div>
-        {suggestion.NAME} ({suggestion.ID})
-    </div>
-);
 
 class Signup extends Component {
     state = {
-        schools: [],
+        schoolList: [],
         school: "",
         schoolId: null,
         type: "prospect",
@@ -38,9 +21,34 @@ class Signup extends Component {
         this.Auth = new AuthService();
     }
 
+    getSuggestions = value => {
+        const inputValue = value.trim().toLowerCase();
+        const inputLength = inputValue.length;
+    
+        return inputLength === 0 ? [] : this.state.schoolList.filter(school =>
+            school.NAME.toLowerCase().slice(0, inputLength) === inputValue
+        );
+    };
+    
+    getSuggestionValue = suggestion => suggestion.NAME;
+    
+    // Use your imagination to render suggestions.
+    renderSuggestion = suggestion => (
+        <div>
+            {suggestion.NAME} ({suggestion.ID})
+        </div>
+    );
+
     componentWillMount() {
         if (this.Auth.loggedIn()) {
             this.props.history.replace('/');
+        }
+        else {
+            API.getSchoolList()
+            .then(res => {
+                this.setState({schoolList: res.data});
+                console.log(this.state.schoolList);
+            });
         }
     }
 
@@ -72,7 +80,7 @@ class Signup extends Component {
     // You already implemented this logic above, so just use it.
     onSuggestionsFetchRequested = ({ value }) => {
         this.setState({
-            suggestions: getSuggestions(value)
+            suggestions: this.getSuggestions(value)
         });
     };
 
@@ -119,8 +127,8 @@ class Signup extends Component {
                             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
                             onSuggestionsClearRequested={this.onSuggestionsClearRequested}
                             onSuggestionSelected={this.onSuggestionSelected}
-                            getSuggestionValue={getSuggestionValue}
-                            renderSuggestion={renderSuggestion}
+                            getSuggestionValue={this.getSuggestionValue}
+                            renderSuggestion={this.renderSuggestion}
                             inputProps={inputProps}
                             id="school"
                         />
