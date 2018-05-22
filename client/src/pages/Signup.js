@@ -5,7 +5,9 @@ import API from '../utils/API';
 
 class Signup extends Component {
     state = {
-        schools: []
+        schools: [],
+        school: null,
+        type: "prospect"
     };
 
     constructor() {
@@ -19,16 +21,14 @@ class Signup extends Component {
         }
         API.getSchoolList()
             .then(res => {
-                console.log(res.data);
                 this.setState({ schools: res.data });
-            })
+            });
     }
 
     handleFormSubmit = event => {
         event.preventDefault();
         API.signUpUser(this.state.username, this.state.type, this.state.school, this.state.email, this.state.password,this.state.type, this.state.school)
             .then(res => {
-                console.log(res.data);
                 // once the user has signed up
                 // send them to the login page
                 this.props.history.replace('/login');
@@ -96,7 +96,6 @@ class Signup extends Component {
                             onChange={this.handleChange} />
                     </div>
                     <button type="submit" className="button">Submit</button>
-                    {/* <button type="submit" className="btn btn-primary">Submit</button> */}
                 </form>
                 <p><Link to="/login">Go to Login</Link></p>
             </div>

@@ -56,6 +56,7 @@ export default {
 
     // sign up a user to our service
     signUpUser: (username, type, school, email, password) => {
-        return axios.post('api/user/signup', { username: username, type: type, associatedSchoolId: school, email: email, password: password });
+        const user = { username: username, type: type, associatedSchoolId: school, email: email, password: password }
+        return axios.post('api/user/signup', user);
     }
 };

@@ -9,10 +9,12 @@ import Tab4 from "../components/Tab4/Tab4";
 import Tab5 from "../components/Tab5/Tab5";
 import Tab6 from "../components/Tab6/Tab6";
 import Rating from "../components/Rating";
+import Map from "../components/Map";
 import API from "../utils/API";
 import AuthService from "../components/AuthService";
 import GridX from "../components/GridX/GridX";
 import RankingTab from "../components/RankingTab/RankingTab";
+
 const auth = new AuthService();
 
 class Info extends Component {
@@ -103,6 +105,9 @@ class Info extends Component {
                             parttime={this.state.school.parttime}
                             races={this.state.races}
                         />
+                    </GridX>
+                    <GridX>
+                        <Map/>
                     </GridX>
                     <GridX>
 
