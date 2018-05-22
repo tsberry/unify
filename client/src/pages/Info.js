@@ -9,6 +9,7 @@ import Tab4 from "../components/Tab4/Tab4";
 import Tab5 from "../components/Tab5/Tab5";
 import Tab6 from "../components/Tab6/Tab6";
 import Rating from "../components/Rating";
+import Map from "../components/Map";
 import API from "../utils/API";
 import AuthService from "../components/AuthService";
 import GridX from "../components/GridX/GridX";
@@ -108,12 +109,11 @@ class Info extends Component {
                         />
                     </GridX>
                     <GridX>
-
+                        <Map/>
+                    </GridX>
+                    <GridX>
                         <Rating/>
                         <RankingTab />
-
-                        <Rating />
-
                     </GridX>
                 </GridContainer>
             </Container>

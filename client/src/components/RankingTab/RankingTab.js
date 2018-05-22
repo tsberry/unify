@@ -1,6 +1,6 @@
 import React from "react";
 // import "./RankingTab.css";
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import StarRatingComponent from 'react-star-rating-component';
 
 
@@ -9,7 +9,7 @@ class RankingTab extends React.Component {
         super();
 
         this.state = {
-            rating: 0,
+            //rating: 0,
             // rating_half_star: .5,
             rating_empty_initial: 0,
             faculty: 0,
@@ -73,7 +73,7 @@ class RankingTab extends React.Component {
     // }
 
     render() {
-        const { rating } = this.state;
+        //const { rating } = this.state;
 
         return (<div className="card">
 
