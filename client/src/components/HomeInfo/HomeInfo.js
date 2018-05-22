@@ -8,6 +8,8 @@ const Textbox = props => (
             <div className="cell one large-12">
                 <p>You didn't spend the last 12 years of your life studying, just to end up in a college that isn't right for you. </p>
                 <h3>Just what makes a college “right for you," anyway?</h3>
+                    <img id="school-icon" src="../assets/img/001-university.png" alt="school icon" />
+                    <img id="rating-icon" src="../assets/img/009-review.png" alt="rating icon" />
             </div>
         </div>
 

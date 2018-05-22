@@ -29,3 +29,15 @@
 .center-info {
     padding-bottom: 70px;
 }
+
+#school-icon {
+    height: 90px;
+    padding-top: 30px;
+    margin-right: 15px;
+}
+
+#rating-icon {
+    height: 80px;
+    padding-top: 30px;
+    margin-left: 15px;
+}
