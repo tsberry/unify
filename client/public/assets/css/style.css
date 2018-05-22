@@ -10,6 +10,11 @@ h4 {
     background-color: #1565c0;
 }
 
+button:hover,
+button:active {
+    color: white;
+}
+
 .form-control, 
 select {
     max-width: 330px;

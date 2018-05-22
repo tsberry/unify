@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./Tab3.css";
+import "./ImageTab.css";
 
 
-class Tab3 extends Component {
+class ImageTab extends Component {
 
     render(){
         return(
@@ -15,4 +15,4 @@ class Tab3 extends Component {
     }
 }
 
-export default Tab3; 
+export default ImageTab; 
