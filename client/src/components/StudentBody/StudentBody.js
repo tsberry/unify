@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "./Tab6.css";
+import "./StudentBody.css";
 import Ethnicity from "../Ethnicity/Ethnicity";
 
 
-class Tab6 extends Component {
+class StudentBody extends Component {
 
     render(){
         return(
@@ -20,7 +20,7 @@ class Tab6 extends Component {
                                 <h3>{this.props.parttime}% Part-time</h3>
                             </div>
                             <div className="cell large-7 scales">
-                                <h4><b>Race/Ethnicity</b></h4>
+                                <h4>Race/Ethnicity</h4>
                                 {this.props.races.map(race => (
                                         <Ethnicity
                                             percentage={race.percentage}
@@ -37,4 +37,4 @@ class Tab6 extends Component {
     }
 }
 
-export default Tab6;
+export default StudentBody;

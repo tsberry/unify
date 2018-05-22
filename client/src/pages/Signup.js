@@ -108,7 +108,7 @@ class Signup extends Component {
                     <label>Are you a...?</label>
                     <select name="type" onChange={this.handleChange}>
                         <option value="prospect">Prospective Student</option>
-                        <option value="alumn">Alumn</option>
+                        <option value="alumn">Alumni</option>
                     </select>
 
                     {this.state.type === "alumn" ?

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./Tab2.css";
+import "./Financial.css";
 
 
-class Tab2 extends Component {
+class Financial extends Component {
 
     render(){
         return(
@@ -16,10 +16,10 @@ class Tab2 extends Component {
                     <h4>{this.props.loanrate}%</h4>
                     <hr />
                     <p>Typical Total Debt After Graduation</p>
-                    <h4>{this.props.debt}</h4>
+                    <h4>${this.props.debt}</h4>
                     <p>*For undergraduate borrowers who complete college.</p>
                     <hr />
-                    <p>Typical Loan Payment:   <b>${this.props.monthly} / mon</b></p>
+                    <p>Typical Loan Payment:   ${this.props.monthly} / mon</p>
                 </div>
             </div>
         </div>
@@ -27,6 +27,6 @@ class Tab2 extends Component {
     }
 }
 
-export default Tab2;
+export default Financial;
 
 
