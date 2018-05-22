@@ -109,13 +109,11 @@ class Info extends Component {
                         />
                     </GridX>
                     <GridX>
-                        <Map />
+                        <Map/>
                     </GridX>
                     <GridX>
-
-                        <Rating />
+                        <Rating/>
                         <RankingTab />
-
                     </GridX>
                 </GridContainer>
             </Container>
