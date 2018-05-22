@@ -23,28 +23,37 @@ class Info extends Component {
         school: {},
         majors: [],
         races: [],
+        questions: [],
         saved: false
     }
 
     componentWillMount() {
-        API.getCollege(this.props.match.params.id)
-            .then(res1 => {
-                this.setState({ school: res1.data, majors: res1.data.majors, races: res1.data.races })
-                API.saveCollege(res1.data)
-                    .then(res2 => {
-                        if (auth.loggedIn()) {
-                            API.getColleges(auth.getProfile().id)
+        if (!auth.loggedIn()) this.props.history.replace("/");
+        else {
+            API.getCollege(this.props.match.params.id)
+                .then(res1 => {
+                    this.setState({ school: res1.data, majors: res1.data.majors, races: res1.data.races })
+                    API.saveCollege(res1.data)
+                        .then(res2 => {
+                            API.getSavedCollege(this.props.match.params.id)
                                 .then(res3 => {
-                                    for (let i = 0; i < res3.data.colleges.length; i++) {
-                                        if (this.state.school.id === res3.data.colleges[i].queryId) {
-                                            this.setState({ saved: true });
-                                            return;
-                                        }
+                                    this.setState({ questions: res3.data.college.Questions });
+                                    console.log(res3.data.college.Questions);
+                                    if (auth.loggedIn()) {
+                                        API.getColleges(auth.getProfile().id)
+                                            .then(res4 => {
+                                                for (let i = 0; i < res4.data.colleges.length; i++) {
+                                                    if (this.state.school.id === res4.data.colleges[i].queryId) {
+                                                        this.setState({ saved: true });
+                                                        return;
+                                                    }
+                                                }
+                                            });
                                     }
-                                });
-                        }
-                    });
-            }).catch(err => console.log(err));
+                                })
+                        });
+                }).catch(err => console.log(err));
+        }
     }
 
     starAction = () => {
@@ -109,11 +118,11 @@ class Info extends Component {
                         />
                     </GridX>
                     <GridX>
-                        <Map/>
+                        <Map />
                     </GridX>
                     <GridX>
-                        <Rating/>
-                        <RankingTab />
+                        <Rating />
+                        <RankingTab school={this.state.school.id} />
                     </GridX>
                 </GridContainer>
             </Container>

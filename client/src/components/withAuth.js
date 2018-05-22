@@ -12,7 +12,7 @@ export default function withAuth(AuthComponent) {
         }
         componentWillMount() {
             if (!Auth.loggedIn()) {
-                this.props.history.replace('/join');
+                this.props.history.replace('/');
             }
             else {
                 try {
@@ -23,7 +23,7 @@ export default function withAuth(AuthComponent) {
                 }
                 catch (err) {
                     Auth.logout();
-                    this.props.history.replace('/join');
+                    this.props.history.replace('/');
                 }
             }
         }
