@@ -34,6 +34,10 @@ export default {
         return axios.post("/api/colleges", collegeData);
     },
 
+    getSavedCollege: (collegeId) => {
+        return axios.get(`/api/colleges/${collegeId}`);
+    },
+
     saveUser: (userId, collegeId) => {
         return axios.post(`/api/colleges/${collegeId}/${userId}`);
     },
@@ -51,7 +55,11 @@ export default {
     },
 
     saveAnswer: (answer, questionId, userId, collegeId) => {
-        return axios.post('api/answer', { answer: answer, questionId: questionId, userId: userId, collegeId: collegeId });
+        return axios.post('/api/answer', { answer: answer, questionId: questionId, userId: userId, collegeId: collegeId });
+    },
+
+    saveRating: (userId, collegeId, faculty, food, campuslife, transport, security) => {
+        return axios.post('/api/rate', {userId: userId, collegeId: collegeId, faculty: faculty, food: food, campuslife: campuslife, transport: transport, security: security});
     },
 
     // sign up a user to our service
