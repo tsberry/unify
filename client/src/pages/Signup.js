@@ -2,12 +2,35 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import AuthService from '../components/AuthService';
 import API from '../utils/API';
+import Autosuggest from "react-autosuggest";
+import schoolList from "./schools.json";
+import theme from "./theme.css";
+
+const getSuggestions = value => {
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+
+    return inputLength === 0 ? [] : schoolList.filter(school =>
+        school.NAME.toLowerCase().slice(0, inputLength) === inputValue
+    );
+};
+
+const getSuggestionValue = suggestion => suggestion.NAME;
+
+// Use your imagination to render suggestions.
+const renderSuggestion = suggestion => (
+    <div>
+        {suggestion.NAME} ({suggestion.ID})
+    </div>
+);
 
 class Signup extends Component {
     state = {
         schools: [],
-        school: null,
-        type: "prospect"
+        school: "",
+        schoolId: null,
+        type: "prospect",
+        suggestions: []
     };
 
     constructor() {
@@ -19,15 +42,11 @@ class Signup extends Component {
         if (this.Auth.loggedIn()) {
             this.props.history.replace('/');
         }
-        API.getSchoolList()
-            .then(res => {
-                this.setState({ schools: res.data });
-            });
     }
 
     handleFormSubmit = event => {
         event.preventDefault();
-        API.signUpUser(this.state.username, this.state.type, this.state.school, this.state.email, this.state.password,this.state.type, this.state.school)
+        API.signUpUser(this.state.username, this.state.type, this.state.schoolId, this.state.email, this.state.password, this.state.type, this.state.school)
             .then(res => {
                 // once the user has signed up
                 // send them to the login page
@@ -43,7 +62,43 @@ class Signup extends Component {
         });
     };
 
+    onChange = (event, { newValue }) => {
+        this.setState({
+            school: newValue
+        });
+    };
+
+    // Autosuggest will call this function every time you need to update suggestions.
+    // You already implemented this logic above, so just use it.
+    onSuggestionsFetchRequested = ({ value }) => {
+        this.setState({
+            suggestions: getSuggestions(value)
+        });
+    };
+
+    // Autosuggest will call this function every time you need to clear suggestions.
+    onSuggestionsClearRequested = () => {
+        this.setState({
+            suggestions: []
+        });
+    };
+
+    onSuggestionSelected = (event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) => {
+        event.preventDefault();
+        this.setState({
+            school: suggestionValue,
+            schoolId: suggestion.ID
+        });
+    };
+
     render() {
+
+        const inputProps = {
+            placeholder: 'School Name',
+            value: this.state.school,
+            onChange: this.onChange
+        };
+
         return (
             <div className="container">
 
@@ -56,19 +111,20 @@ class Signup extends Component {
                         <option value="alumn">Alumn</option>
                     </select>
 
-                    <datalist id="schools">
-                        {this.state.schools.map(school => <option label={school.NAME} value={school.ID} key={school.ID} />)}
-                    </datalist>
-
                     {this.state.type === "alumn" ?
                         <div className="form-group">
-                            <label htmlFor="school">My School</label>
-                            <input className="form-control"
-                                name="school"
-                                type="text"
-                                id="school"
-                                list="schools"
-                                onChange={this.handleChange} />
+                        <label htmlFor="school">Your School</label>
+                        <Autosuggest
+                            suggestions={this.state.suggestions}
+                            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+                            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+                            onSuggestionSelected={this.onSuggestionSelected}
+                            getSuggestionValue={getSuggestionValue}
+                            renderSuggestion={renderSuggestion}
+                            inputProps={inputProps}
+                            id="school"
+                        />
+                        
                         </div>
                         : ""}
                     <div className="form-group">
