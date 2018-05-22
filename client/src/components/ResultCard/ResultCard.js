@@ -6,7 +6,7 @@ class ResultCard extends Component {
 
   render(){
     return(
-      <div className="grid-container callout secondary" onClick= {() => this.props.getInfo(this.props.id)}>
+      <div className="grid-container callout secondary result" onClick= {() => this.props.getInfo(this.props.id)}>
         <h4>{this.props.name}</h4>
         <p>{this.props.city}, {this.props.state}</p>
         <p>{this.props.students} Undergraduate Students</p>
