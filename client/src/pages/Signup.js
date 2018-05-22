@@ -4,7 +4,7 @@ import AuthService from '../components/AuthService';
 import API from '../utils/API';
 import Autosuggest from "react-autosuggest";
 import schoolList from "./schools.json";
-import theme from "./theme.css";
+import "./theme.css";
 
 const getSuggestions = value => {
     const inputValue = value.trim().toLowerCase();
@@ -86,7 +86,7 @@ class Signup extends Component {
     onSuggestionSelected = (event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) => {
         event.preventDefault();
         this.setState({
-            school: suggestionValue,
+            school: `${suggestionValue} (${suggestion.ID})`,
             schoolId: suggestion.ID
         });
     };
