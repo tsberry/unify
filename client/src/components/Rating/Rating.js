@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Rating.css";
-import AuthService from "../AuthService";
+
 
 
 class Rating extends Component {
@@ -9,29 +9,12 @@ class Rating extends Component {
 
     render() {
 
-        //get user info
-        const userType = new AuthService().getProfile().type;
-        const isAlum = "alumn"===userType; 
-        // console.log(new AuthService().getProfile().type)
-
-        //check if user is alumn
         
-
-        //if user is alumni 
-
-        //render star rankings
-
-        //if user is not alumni
-
-
-        //render prospect content
-        const typeMessage = isAlum ? "This person IS an alumn" : "Not an alum.";
 
 
         return (
             <div className="cell medium-12 large-6">
-                <div>{typeMessage}</div>
-                {isAlum ? <div>Alumns only</div> : ''}
+                
                 <div className="card">
                     <div className="card-section rating-body">
                         <div className="grid-x grid-margin-x">

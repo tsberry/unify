@@ -1,13 +1,13 @@
 import React from "react";
 import "./RankingTab.css";
-
-
-//import ReactDOM from 'react-dom';
-
 import StarRatingComponent from 'react-star-rating-component';
 import API from "../../utils/API";
 import AuthService from "../AuthService";
+
 const auth = new AuthService();
+ 
+
+ 
 
 class RankingTab extends React.Component {
     constructor() {
@@ -79,10 +79,11 @@ class RankingTab extends React.Component {
     // }
 
     render() {
-        //const { rating } = this.state;
+         
 
         return (<div className="card">
-
+            {/* <div>{typeMessage}</div>
+            {isAlum ? <div>Alumns only</div> : ''} */}
             <div className="content">
 
                 <div className="tabs-content" data-tabs-content="example-tabs">
@@ -160,7 +161,7 @@ class RankingTab extends React.Component {
 
                                 <span> Security: </span>
                                 <br />
-                                
+
                                 <StarRatingComponent
                                     name="security"
                                     starCount={5}

@@ -72,6 +72,10 @@ class Info extends Component {
     }
 
     render() {
+
+        const userType = new AuthService().getProfile().type;
+        const isAlum = "alumn" === userType;
+
         return (
             <Container>
                 <GridContainer>
@@ -122,12 +126,14 @@ class Info extends Component {
                     </GridX>
                     <GridX>
                         <Rating />
-                        <RankingTab school={this.state.school.id} />
+                        
+
+                        {isAlum ? <RankingTab school={this.state.school.id} />: ""}
                     </GridX>
                 </GridContainer>
             </Container>
         );
     }
 }
-
+    
 export default Info;
