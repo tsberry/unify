@@ -40,7 +40,6 @@ class Info extends Component {
                             API.getSavedCollege(this.props.match.params.id)
                                 .then(res3 => {
                                     this.setState({ questions: res3.data.college.Questions, ratings: res3.data.ratings, id: res3.data.college.id });
-                                    console.log(res3.data.college.Questions);
                                     if (auth.loggedIn()) {
                                         API.getColleges(auth.getProfile().id)
                                             .then(res4 => {
