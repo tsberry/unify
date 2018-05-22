@@ -11,7 +11,7 @@ class Rating extends Component {
                 <div className="card-section rating-body">
                     <div className="grid-x grid-margin-x">
                         <div className="cell large-12">
-                            <span className="heading">School Rating</span>
+                            <span className="heading">School Ranking</span>
                             <span className="fa fa-star checked"></span>
                             <span className="fa fa-star checked"></span>
                             <span className="fa fa-star checked"></span>
