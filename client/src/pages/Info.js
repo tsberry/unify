@@ -110,9 +110,7 @@ class Info extends Component {
                     <GridX>
 
                         <Rating/>
-                        <RankingTab />
-
-                        <Rating />
+                        <RankingTab/>
 
                     </GridX>
                 </GridContainer>
