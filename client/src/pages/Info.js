@@ -14,6 +14,7 @@ import API from "../utils/API";
 import AuthService from "../components/AuthService";
 import GridX from "../components/GridX/GridX";
 import RankingTab from "../components/RankingTab/RankingTab";
+import QuestionAnswers from "../components/QuestionAnswers";
 
 const auth = new AuthService();
 
@@ -114,6 +115,9 @@ class Info extends Component {
                     <GridX>
                         <Rating/>
                         <RankingTab />
+                    </GridX>
+                    <GridX>
+                        <QuestionAnswers />
                     </GridX>
                 </GridContainer>
             </Container>
