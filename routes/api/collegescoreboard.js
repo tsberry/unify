@@ -1,7 +1,13 @@
 const router = require("express").Router();
 const axios = require("axios");
 const programList = require("../../db/programs.json");
+const schoolList = require("../../db/schools.json");
 const QUERYURL = "https://api.data.gov/ed/collegescorecard/v1/schools/?api_key=pTArHCwVfBH8pDnZG0UAOdFF6iDRecYtEs9rCIc3";
+
+router.get("/list", function (req, res) {
+    res.json(schoolList);
+});
+
 router.get("/search/:zip/:distance", function (req, res) {
     let query = QUERYURL;
     query += `&zip=${req.params.zip}`;
