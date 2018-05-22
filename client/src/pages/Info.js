@@ -21,9 +21,11 @@ class Info extends Component {
 
     state = {
         school: {},
+        id: 0,
         majors: [],
         races: [],
         questions: [],
+        ratings: [],
         saved: false
     }
 
@@ -37,7 +39,7 @@ class Info extends Component {
                         .then(res2 => {
                             API.getSavedCollege(this.props.match.params.id)
                                 .then(res3 => {
-                                    this.setState({ questions: res3.data.college.Questions });
+                                    this.setState({ questions: res3.data.college.Questions, ratings: res3.data.college.Ratings, id: res3.data.college.id });
                                     console.log(res3.data.college.Questions);
                                     if (auth.loggedIn()) {
                                         API.getColleges(auth.getProfile().id)
@@ -122,7 +124,7 @@ class Info extends Component {
                     </GridX>
                     <GridX>
                         <Rating />
-                        <RankingTab school={this.state.school.id} />
+                        <RankingTab school={this.state.id} />
                     </GridX>
                 </GridContainer>
             </Container>
