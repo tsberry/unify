@@ -12,7 +12,7 @@ router.post('/login', (req, res) => {
         const isMatch = user.validPassword(req.body.password);
         console.log(isMatch);
         if (isMatch) {
-            let token = jwt.sign({ id: user.id, username: user.username, type: user.type }, 'all sorts of code up in here', { expiresIn: 129600 }); // Sigining the token
+            let token = jwt.sign({ id: user.id, username: user.username, type: user.type, school: user.associatedSchoolId }, 'all sorts of code up in here', { expiresIn: 129600 }); // Sigining the token
             res.json({ success: true, message: "Token Issued!", token: token, user: user });
         } else {
             res.status(401).json({ success: false, message: "Authentication failed. Wrong password." });

@@ -12,6 +12,7 @@ h4 {
 
 .info-1 {
     padding: 50px;
+    padding-bottom: 20px;
 }
 
 .header {
@@ -21,19 +22,38 @@ h4 {
 
 .textbox {
     z-index: 100;
-    position: absolute;
+    position: relative;
+    margin: 0 auto;
     background-color: #aaaaaa8f;
     border-radius: 10px;
     color: white;
     max-width: 900px;
     max-height: 600px;
-    top: 15%; 
-    left: 15%;
+    top: 45%;
 }
 
 .text-content {
     padding: 30px;
 }
+
+.one {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.three {
+    padding-top: 40px;
+}
+
+.img-one {
+    padding-top: 30px;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.center-info {
+    padding-bottom: 70px;
+}
+
 
 .button {
     background-color: #1565c0;

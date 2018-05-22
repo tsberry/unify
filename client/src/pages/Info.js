@@ -9,14 +9,13 @@ import Tab4 from "../components/Tab4/Tab4";
 import Tab5 from "../components/Tab5/Tab5";
 import Tab6 from "../components/Tab6/Tab6";
 import Rating from "../components/Rating";
+import Map from "../components/Map";
 import API from "../utils/API";
 import AuthService from "../components/AuthService";
 import GridX from "../components/GridX/GridX";
-
 import RankingTab from "../components/RankingTab/RankingTab";
 
 const auth = new AuthService();
-
 
 class Info extends Component {
 
@@ -32,32 +31,34 @@ class Info extends Component {
             .then(res1 => {
                 this.setState({ school: res1.data, majors: res1.data.majors, races: res1.data.races })
                 API.saveCollege(res1.data)
-                .then(res2 => {
-                    API.getColleges(auth.getProfile().id)
-                    .then(res3 => {
-                        for (let i = 0; i < res3.data.colleges.length; i++) {
-                            if (this.state.school.id === res3.data.colleges[i].queryId) {
-                                this.setState({ saved: true });
-                                return;
-                            }
+                    .then(res2 => {
+                        if (auth.loggedIn()) {
+                            API.getColleges(auth.getProfile().id)
+                                .then(res3 => {
+                                    for (let i = 0; i < res3.data.colleges.length; i++) {
+                                        if (this.state.school.id === res3.data.colleges[i].queryId) {
+                                            this.setState({ saved: true });
+                                            return;
+                                        }
+                                    }
+                                });
                         }
                     });
-                });
             }).catch(err => console.log(err));
     }
 
     starAction = () => {
-        if(this.state.saved) {
+        if (this.state.saved) {
             API.deleteUser(auth.getProfile().id, this.state.school.id)
-            .then(res => {
-                this.setState({saved: false});
-            });
+                .then(res => {
+                    this.setState({ saved: false });
+                });
         }
         else {
             API.saveUser(auth.getProfile().id, this.state.school.id)
-            .then(res => {
-                this.setState({saved: true});
-            });
+                .then(res => {
+                    this.setState({ saved: true });
+                });
         }
     }
 
@@ -108,10 +109,11 @@ class Info extends Component {
                         />
                     </GridX>
                     <GridX>
-
+                        <Map/>
+                    </GridX>
+                    <GridX>
                         <Rating/>
-                        <RankingTab/>
-
+                        <RankingTab />
                     </GridX>
                 </GridContainer>
             </Container>
