@@ -1,0 +1,31 @@
+.info-1 h3 {
+    color: #1565c0;
+}
+
+.info-1 {
+    padding: 50px;
+    padding-bottom: 20px;
+}
+
+.header {
+    position: relative; 
+    width: 100%;
+}
+
+.one {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.three {
+    padding-top: 40px;
+}
+
+.img-one {
+    padding-top: 30px;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.center-info {
+    padding-bottom: 70px;
+}

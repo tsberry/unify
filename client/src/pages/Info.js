@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Container from "../components/Container"
 import TitleCard from "../components/TitleCard";
-import GridContainer from "../components/GridContainer"
+import GridContainer from "../components/GridContainer";
+import GridX from "../components/GridX/GridX";
 import Tab1 from "../components/Tab1/Tab1";
 import Tab2 from "../components/Tab2/Tab2";
 import Tab3 from "../components/Tab3/Tab3";
@@ -12,7 +13,6 @@ import Rating from "../components/Rating";
 import Map from "../components/Map";
 import API from "../utils/API";
 import AuthService from "../components/AuthService";
-import GridX from "../components/GridX/GridX";
 import RankingTab from "../components/RankingTab/RankingTab";
 
 const auth = new AuthService();

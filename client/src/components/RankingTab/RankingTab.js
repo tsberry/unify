@@ -75,10 +75,10 @@ class RankingTab extends React.Component {
     render() {
         //const { rating } = this.state;
 
-        return (<div className="card">
-
+        return (
+        
+        <div className="card">
             <div className="content">
-
                 <div className="tabs-content" data-tabs-content="example-tabs">
                     <div className="tabs-panel is-active" id="panel1">
                         <form>
