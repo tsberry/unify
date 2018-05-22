@@ -1,6 +1,5 @@
 import React from "react";
 // import "./RankingTab.css";
-import ReactDOM from 'react-dom';
 import StarRatingComponent from 'react-star-rating-component';
 
 
@@ -73,7 +72,7 @@ class RankingTab extends React.Component {
     // }
 
     render() {
-        const { rating } = this.state;
+        // const { rating } = this.state;
 
         return (<div className="card">
 
@@ -82,8 +81,8 @@ class RankingTab extends React.Component {
                 <div className="tabs-content" data-tabs-content="example-tabs">
                     <div className="tabs-panel is-active" id="panel1">
                         <form>
-                            <label for="ranking"><h3>Rank this School</h3></label>
-                            <label for="faculty">Faculty:
+                            <label htmlFor="ranking"><h3>Rank this School</h3></label>
+                            <label htmlFor="faculty">Faculty:
                                 <StarRatingComponent
                                     name="faculty"
                                     starCount={5}
@@ -94,7 +93,7 @@ class RankingTab extends React.Component {
                                     renderStarIcon={(index, value) => <span className={(index > value) ? "fa fa-star" : "fa fa-star checked"}></span>}
                                     emptyStarColor="#868889"
                                 /></label>
-                            <label for="campusLife">Campus Life:
+                            <label htmlFor="campusLife">Campus Life:
                                 <StarRatingComponent
                                     name="campusLife"
                                     starCount={5}
@@ -105,7 +104,7 @@ class RankingTab extends React.Component {
                                     renderStarIcon={(index, value) => <span className={(index > value) ? "fa fa-star" : "fa fa-star checked"}></span>}
                                     emptyStarColor="#868889"
                                 /></label>
-                            <label for="localFood">Local Food:
+                            <label htmlFor="localFood">Local Food:
                                 <StarRatingComponent
                                     name="localFood"
                                     starCount={5}
@@ -116,7 +115,7 @@ class RankingTab extends React.Component {
                                     renderStarIcon={(index, value) => <span className={(index > value) ? "fa fa-star" : "fa fa-star checked"}></span>}
                                     emptyStarColor="#868889"
                                 /></label>
-                            <label for="transportation">Transportation:
+                            <label htmlFor="transportation">Transportation:
                                 <StarRatingComponent
                                     name="transportation"
                                     starCount={5}
@@ -128,7 +127,7 @@ class RankingTab extends React.Component {
                                     emptyStarColor="#868889"
                                 />
                             </label>
-                            <label for="security">Security:
+                            <label htmlFor="security">Security:
                                 <StarRatingComponent
                                     name="security"
                                     starCount={5}

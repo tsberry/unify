@@ -1,6 +1,11 @@
 import axios from "axios";
 
 export default {
+    // Get list of all schools in the government data
+    getSchoolList: function() {
+        return axios.get("/api/collegescoreboard/list");
+    },
+
     // Get colleges within distance radius of zip
     searchColleges: function (zip, distance) {
         return axios.get(`/api/collegescoreboard/search/${zip}/${distance}`);
@@ -50,7 +55,8 @@ export default {
     },
 
     // sign up a user to our service
-    signUpUser: (username, email, password, type) => {
-        return axios.post('api/user/signup', { username: username, email: email, password: password, type: type });
+    signUpUser: (username, type, school, email, password) => {
+        const user = { username: username, type: type, associatedSchoolId: school, email: email, password: password }
+        return axios.post('api/user/signup', user);
     }
 };

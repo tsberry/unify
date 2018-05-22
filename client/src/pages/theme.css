@@ -1,0 +1,21 @@
+.react-autosuggest__input {
+    max-width: 330px;
+}
+
+.react-autosuggest__container {
+    max-width: 330px;
+}
+
+.react-autosuggest__suggestions-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.react-autosuggest__suggestion:hover {
+    cursor: pointer;
+}
+
+.react-autosuggest__suggestion--highlighted {
+    background-color: #aaaaaa8f;
+}
