@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 import Container from "../components/Container"
 import TitleCard from "../components/TitleCard";
-import GridContainer from "../components/GridContainer"
-import Tab1 from "../components/Tab1/Tab1";
-import Tab2 from "../components/Tab2/Tab2";
-import Tab3 from "../components/Tab3/Tab3";
-import Tab4 from "../components/Tab4/Tab4";
-import Tab5 from "../components/Tab5/Tab5";
-import Tab6 from "../components/Tab6/Tab6";
+import GridContainer from "../components/GridContainer";
+import GridX from "../components/GridX/GridX";
+import Programs from "../components/Programs/Programs";
+import Financial from "../components/Financial/Financial";
+import ImageTab from "../components/ImageTab/ImageTab";
+import GradInfo from "../components/GradInfo/GradInfo";
+import TestScores from "../components/TestScores/TestScores";
+import StudentBody from "../components/StudentBody/StudentBody";
 import Rating from "../components/Rating";
+import RankingTab from "../components/RankingTab/RankingTab";
 import Map from "../components/Map";
 import API from "../utils/API";
 import AuthService from "../components/AuthService";
-import GridX from "../components/GridX/GridX";
-import RankingTab from "../components/RankingTab/RankingTab";
+
 
 const auth = new AuthService();
 
@@ -21,9 +22,11 @@ class Info extends Component {
 
     state = {
         school: {},
+        id: 0,
         majors: [],
         races: [],
         questions: [],
+        ratings: [],
         saved: false
     }
 
@@ -37,8 +40,7 @@ class Info extends Component {
                         .then(res2 => {
                             API.getSavedCollege(this.props.match.params.id)
                                 .then(res3 => {
-                                    this.setState({ questions: res3.data.college.Questions });
-                                    console.log(res3.data.college.Questions);
+                                    this.setState({ questions: res3.data.college.Questions, ratings: res3.data.ratings, id: res3.data.college.id });
                                     if (auth.loggedIn()) {
                                         API.getColleges(auth.getProfile().id)
                                             .then(res4 => {
@@ -92,30 +94,30 @@ class Info extends Component {
                         />
                     </GridX>
                     <GridX>
-                        <Tab1
+                        <Programs
                             majors={this.state.majors}
                         />
-                        <Tab3
+                        <ImageTab
                             image="../assets/img/annie-spratt-608001-unsplash.jpg"
                             alt="academics" />
                     </GridX>
                     <GridX>
-                        <Tab5
+                        <TestScores
                             sat={this.state.school.sat}
                             act={this.state.school.act}
                         />
-                        <Tab2
+                        <Financial
                             loanrate={this.state.school.loanrate}
                             debt={this.state.school.debt}
                             monthly={this.state.school.monthly}
                         />
-                        <Tab4
+                        <GradInfo
                             gradrate={this.state.school.gradrate}
                             earnings={this.state.school.earnings}
                         />
                     </GridX>
                     <GridX>
-                        <Tab6
+                        <StudentBody
                             students={this.state.school.students}
                             fulltime={this.state.school.fulltime}
                             parttime={this.state.school.parttime}
@@ -126,10 +128,15 @@ class Info extends Component {
                         <Map />
                     </GridX>
                     <GridX>
+ 
                         <Rating />
 
 
                         {isAlum ? <RankingTab school={this.state.school.id} /> : ""}
+ 
+                        <Rating ratings={this.state.ratings} />
+                        <RankingTab school={this.state.id} />
+ 
                     </GridX>
                 </GridContainer>
             </Container>

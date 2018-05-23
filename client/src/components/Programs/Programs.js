@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "./Tab1.css";
+import "./Programs.css";
 import MajorItem from "../MajorItem/MajorItem";
 
 
-class Tab1 extends Component {
+class Programs extends Component {
 
     render(){
         return(
@@ -30,5 +30,5 @@ class Tab1 extends Component {
     }
 }
 
-export default Tab1;
+export default Programs;
 

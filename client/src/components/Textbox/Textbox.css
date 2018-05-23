@@ -1,0 +1,15 @@
+.textbox {
+    z-index: 100;
+    position: relative;
+    margin: 0 auto;
+    background-color: #aaaaaa8f;
+    border-radius: 10px;
+    color: white;
+    max-width: 900px;
+    max-height: 600px;
+    top: 45%;
+}
+
+.text-content {
+    padding: 30px;
+}

@@ -5,7 +5,6 @@ import ResultCard from "../components/ResultCard";
 import Container from "../components/Container"
 import AuthService from "../components/AuthService";
 const auth = new AuthService();
-
 //import SearchResults from "../components/SearchResults";
 
 

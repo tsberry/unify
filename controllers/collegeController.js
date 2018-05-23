@@ -88,13 +88,16 @@ module.exports = {
                                 ]
                             }
                         ]
-                    }
+                    },
                 ]
             })
             .then(college => {
                 college.getUsers()
-                .then(data => {
-                    res.json({college: college, users: data});
+                .then(users => {
+                    college.getRatings()
+                    .then(data => {
+                        res.json({college: college, users: users, ratings: data});
+                    });
                 });
             })
             .catch(err => res.status(422).json(err));
