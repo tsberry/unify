@@ -8,11 +8,11 @@ module.exports = {
         .upsert({
             UserId: userId,
             CollegeId: collegeId,
-            ratingFor_Transport: req.body.transport,
-            ratingFor_Food: req.body.food,
-            ratingFor_Faculty: req.body.faculty,
-            ratingFor_CampusLife: req.body.campuslife,
-            ratingFor_Security: req.body.security
+            transport: req.body.transport,
+            food: req.body.food,
+            faculty: req.body.faculty,
+            campuslife: req.body.campuslife,
+            security: req.body.security
         })
         .then(data => res.json(data));
     }

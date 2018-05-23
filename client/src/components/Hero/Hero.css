@@ -17,10 +17,10 @@
   background: black;
 }
 
-.hero * {
+/* .hero * {
   position: relative;
   z-index: 2;
-}
+} */
 
 .hero h3 {
   color: white;

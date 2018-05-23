@@ -1,17 +1,15 @@
-.callout {
-  padding-left: 20px;
+.result {
   width: 95%;
-  margin-left: 10px;
 }
 
 @media screen and (min-width: 40.063em) and (max-width: 357px) {
-  .callout {
+  .result {
     margin-left: 0;
   }
 }
 
 @media screen and (max-width: 40em) {
-  .callout {
+  .result {
     margin-left: 0;
   }
 }

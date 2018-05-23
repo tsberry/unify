@@ -1,6 +1,9 @@
 import React from "react";
 import "./RankingTab.css";
+
+
 //import ReactDOM from 'react-dom';
+
 import StarRatingComponent from 'react-star-rating-component';
 import API from "../../utils/API";
 import AuthService from "../AuthService";
@@ -19,9 +22,9 @@ class RankingTab extends React.Component {
             security: 0,
             transportation: 0,
             localFood: 0
-};
+        };
 
-}
+    }
 
     onStarClick(nextValue, prevValue, name) {
         this.setState({ rating: nextValue });
@@ -67,7 +70,7 @@ class RankingTab extends React.Component {
         // })
     }
 
- // onStarClickHalfStar(nextValue, prevValue, name, e) {
+    // onStarClickHalfStar(nextValue, prevValue, name, e) {
     //     const xPos = (e.pageX - e.currentTarget.getBoundingClientRect().left) / e.currentTarget.offsetWidth;
 
     //     if (xPos <= 0.5) {
@@ -78,15 +81,17 @@ class RankingTab extends React.Component {
     render() {
         //const { rating } = this.state;
 
-        return (<div className="card">
-
-            <div className="content">
-
-                <div className="tabs-content" data-tabs-content="example-tabs">
-                    <div className="tabs-panel is-active" id="panel1">
+        return (
+            <div className="cell medium-12 large-6">
+                <div className="card">
+                    <div className="ranking-content">
                         <form>
-                            <label htmlFor="ranking"><h3>Rank this School</h3></label>
-                            <label htmlFor="faculty">Faculty:
+                            <label htmlFor="ranking"><h4>Rank this School</h4></label>
+                            <label htmlFor="faculty">
+
+                                <span>Faculty: </span>
+                                <br />
+
                                 <StarRatingComponent
                                     name="faculty"
                                     starCount={5}
@@ -96,8 +101,14 @@ class RankingTab extends React.Component {
                                     starColor="#1565c0"
                                     renderStarIcon={(index, value) => <span className={(index > value) ? "fa fa-star" : "fa fa-star checked"}></span>}
                                     emptyStarColor="#868889"
-                                /></label>
-                            <label htmlFor="campusLife">Campus Life:
+
+                                />
+                            </label>
+                            <label htmlFor="campusLife">
+
+                                <span> Campus Life: </span>
+                                <br />
+
                                 <StarRatingComponent
                                     name="campusLife"
                                     starCount={5}
@@ -107,8 +118,13 @@ class RankingTab extends React.Component {
                                     starColor="#1565c0"
                                     renderStarIcon={(index, value) => <span className={(index > value) ? "fa fa-star" : "fa fa-star checked"}></span>}
                                     emptyStarColor="#868889"
-                                /></label>
-                            <label htmlFor="localFood">Local Food:
+                                />
+                            </label>
+
+                            <label htmlFor="localFood">
+                                <span> Local Food: </span>
+                                <br />
+
                                 <StarRatingComponent
                                     name="localFood"
                                     starCount={5}
@@ -118,8 +134,14 @@ class RankingTab extends React.Component {
                                     starColor="#1565c0"
                                     renderStarIcon={(index, value) => <span className={(index > value) ? "fa fa-star" : "fa fa-star checked"}></span>}
                                     emptyStarColor="#868889"
-                                /></label>
-                            <label htmlFor="transportation">Transportation:
+                                />
+                            </label>
+
+                            <label htmlFor="transportation">
+
+                                <span> Transportation: </span>
+                                <br />
+
                                 <StarRatingComponent
                                     name="transportation"
                                     starCount={5}
@@ -131,7 +153,12 @@ class RankingTab extends React.Component {
                                     emptyStarColor="#868889"
                                 />
                             </label>
-                            <label htmlFor="security">Security:
+
+                            <label htmlFor="security">
+
+                                <span> Security: </span>
+                                <br />
+
                                 <StarRatingComponent
                                     name="security"
                                     starCount={5}
@@ -143,12 +170,11 @@ class RankingTab extends React.Component {
                                     emptyStarColor="#868889"
                                 />
                             </label>
-                            <input type="submit" id="submit" value="submit" onClick = {this.onSubmit.bind(this)} />
+                            <button type="submit" id="submit" value="submit" onClick={this.onSubmit.bind(this)} className="button">Submit</button>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
 
         )
 
