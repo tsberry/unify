@@ -14,9 +14,11 @@ import RankingTab from "../components/RankingTab/RankingTab";
 import Map from "../components/Map";
 import API from "../utils/API";
 import AuthService from "../components/AuthService";
-import GridX from "../components/GridX/GridX";
-import RankingTab from "../components/RankingTab/RankingTab";
-import QuestionAnswers from "../components/QuestionAnswers";
+// import GridX from "../components/GridX/GridX";
+// import RankingTab from "../components/RankingTab/RankingTab";
+import QuestionAnswers from "../components/QuestionAnswers/QuestionAnswers";
+import Question from "../components/Question/Question.js";
+import Answer from "../components/Answer/Answer";
 
 const auth = new AuthService();
 
@@ -129,7 +131,7 @@ class Info extends Component {
                         <RankingTab school={this.state.id} />
                     </GridX>
                     <GridX>
-                        <QuestionAnswers />
+                        <QuestionAnswers questions={this.state.questions} userId={this.state.userId} collegeId={this.state.collegeId} />
                     </GridX>
                 </GridContainer>
             </Container>

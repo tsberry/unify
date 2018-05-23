@@ -50,9 +50,13 @@ export default {
         return axios.get(`/api/user/${id}`);
     },
     
+
+    
     saveQuestion: (question, userId, collegeId) => {
         return axios.post('/api/question', { question: question, userId: userId, collegeId: collegeId });
     },
+
+
 
     saveAnswer: (answer, questionId, userId, collegeId) => {
         return axios.post('/api/answer', { answer: answer, questionId: questionId, userId: userId, collegeId: collegeId });
