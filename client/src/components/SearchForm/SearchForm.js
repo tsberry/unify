@@ -1,79 +1,15 @@
 import React, { Component } from 'react';
 import "./SearchForm.css";
-import API from '../../utils/API';
 import Autosuggest from "react-autosuggest";
 
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 class SearchForm extends Component {
 
-  state = {
-    schoolList: [],
-    school: "",
-    schoolId: null,
-    suggestions: []
-  };
-
-  componentWillMount() {
-    API.getSchoolList()
-      .then(res => {
-        this.setState({ schoolList: res.data });
-        console.log(this.state.schoolList);
-      });
-  }
-
-  getSuggestions = value => {
-    const inputValue = value.trim().toLowerCase();
-    const inputLength = inputValue.length;
-
-    return inputLength === 0 ? [] : this.state.schoolList.filter(school =>
-      school.NAME.toLowerCase().slice(0, inputLength) === inputValue
-    );
-  };
-
-  getSuggestionValue = suggestion => suggestion.NAME;
-
-  // Use your imagination to render suggestions.
-  renderSuggestion = suggestion => (
-    <div>
-      {suggestion.NAME} ({suggestion.ID})
-    </div>
-  );
-
-  onChange = (event, { newValue }) => {
-    this.setState({
-      school: newValue
-    });
-  };
-
-  // Autosuggest will call this function every time you need to update suggestions.
-  // You already implemented this logic above, so just use it.
-  onSuggestionsFetchRequested = ({ value }) => {
-    this.setState({
-      suggestions: this.getSuggestions(value)
-    });
-  };
-
-  // Autosuggest will call this function every time you need to clear suggestions.
-  onSuggestionsClearRequested = () => {
-    this.setState({
-      suggestions: []
-    });
-  };
-
-  onSuggestionSelected = (event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) => {
-    event.preventDefault();
-    this.setState({
-      school: `${suggestionValue} (${suggestion.ID})`,
-      schoolId: suggestion.ID
-    });
-  };
-
-
   render() {
 
     const inputProps = {
-      value: this.state.school,
-      onChange: this.onChange
+      value: this.props.school,
+      onChange: this.props.onChange
     };
 
     return (
@@ -86,12 +22,12 @@ class SearchForm extends Component {
             <div className="small-12 medium-3 large-3 cell">
               <label>School Name
               <Autosuggest
-                  suggestions={this.state.suggestions}
-                  onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-                  onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-                  onSuggestionSelected={this.onSuggestionSelected}
-                  getSuggestionValue={this.getSuggestionValue}
-                  renderSuggestion={this.renderSuggestion}
+                  suggestions={this.props.suggestions}
+                  onSuggestionsFetchRequested={this.props.onSuggestionsFetchRequested}
+                  onSuggestionsClearRequested={this.props.onSuggestionsClearRequested}
+                  onSuggestionSelected={this.props.onSuggestionSelected}
+                  getSuggestionValue={this.props.getSuggestionValue}
+                  renderSuggestion={this.props.renderSuggestion}
                   inputProps={inputProps}
                   id="school"
                 />
@@ -99,8 +35,8 @@ class SearchForm extends Component {
             </div>
             <div className="medium-3 large-3 cell">
               <label>State
-              <select class="select-state" name="">
-                <option value="" selected="">Any</option>
+              <select onChange={this.props.handleInputChange} className="select-state" name="state">
+                <option value="none">Any</option>
                 
                 <option value="AL">Alabama</option>
                 
