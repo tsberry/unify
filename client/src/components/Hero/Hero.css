@@ -1,5 +1,23 @@
-.hero {
-  height: 600px;
+.slideshow-container {
+  position: relative;
+  margin: auto;
+  overflow:visible; 
+  background: black;
+}
+
+.slideshow-container img {
+  width: 100%;
+  top:0px; 
+  left:0px;
+  opacity: .80;
+}
+
+
+/* .hero {
+  margin: 0 auto;
+  background: url(/assets/img/fabian-mardi-119790-unsplash.jpg);
+  background-repeat: no-repeat;
+  min-height: 600px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -17,10 +35,10 @@
   background: black;
 }
 
-/* .hero * {
+.hero * {
   position: relative;
   z-index: 2;
-} */
+}*/
 
 .hero h3 {
   color: white;
