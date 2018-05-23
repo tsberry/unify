@@ -68,6 +68,8 @@ class Search extends Component {
                   ownership = {school.ownership}
                   location = {school.location}
                   size = {school.size}
+                  page="search"
+                  key={school.id}
                 />
               ))}
             </GridX>

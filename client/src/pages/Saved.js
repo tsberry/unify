@@ -13,15 +13,30 @@ class Saved extends Component {
         schools: []
     }
 
-    componentDidMount() {
-        API.getColleges(auth.getProfile().id)
-            .then(res => {
-                this.setState({ schools: res.data.colleges });
-            })
+    componentWillMount() {
+        if (!auth.loggedIn() || auth.getProfile().type === "alumn") {
+            this.props.history.replace('/');
+        }
+        else {
+            API.getColleges(auth.getProfile().id)
+                .then(res => {
+                    this.setState({ schools: res.data.colleges });
+                });
+        }
     }
 
     getInfo = id => {
         this.props.history.push(`/info/${id}`)
+    }
+
+    starAction = id => {
+        API.deleteUser(auth.getProfile().id, id)
+            .then(res => {
+                API.getColleges(auth.getProfile().id)
+                    .then(res => {
+                        this.setState({ schools: res.data.colleges });
+                    });
+            });
     }
 
     render() {
@@ -40,6 +55,9 @@ class Saved extends Component {
                             ownership={school.ownership}
                             location={school.location}
                             size={school.size}
+                            page="saved"
+                            starAction={this.starAction}
+                            key={school.queryId}
                         />
                     ))}
                 </ul>

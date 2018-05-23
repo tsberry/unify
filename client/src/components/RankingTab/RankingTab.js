@@ -1,13 +1,13 @@
 import React from "react";
 import "./RankingTab.css";
-
-
-//import ReactDOM from 'react-dom';
-
 import StarRatingComponent from 'react-star-rating-component';
 import API from "../../utils/API";
 import AuthService from "../AuthService";
+
 const auth = new AuthService();
+ 
+
+ 
 
 class RankingTab extends React.Component {
     constructor() {
@@ -54,22 +54,9 @@ class RankingTab extends React.Component {
     onSubmit(event) {
         event.preventDefault();
         API.saveRating(auth.getProfile().id, this.props.school, this.state.faculty, this.state.localFood, this.state.campusLife, this.state.transportation, this.state.security);
-        // fetch('api/learning', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'multipart/form-data',
-        //         'Accept': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         security: this.state.security,
-        //         faculty: this.state.faculty,
-        //         campusLife: this.state.campusLife,
-        //         transportation: this.state.transportation,
-        //         localFood: this.state.localFood
-        //     })
-        // })
     }
 
+    //code for half star feature
     // onStarClickHalfStar(nextValue, prevValue, name, e) {
     //     const xPos = (e.pageX - e.currentTarget.getBoundingClientRect().left) / e.currentTarget.offsetWidth;
 
@@ -79,7 +66,7 @@ class RankingTab extends React.Component {
     // }
 
     render() {
-        //const { rating } = this.state;
+         
 
         return (
             <div className="cell medium-12 large-6">
