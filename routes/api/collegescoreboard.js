@@ -4,6 +4,74 @@ const programList = require("../../db/programs.json");
 const schoolList = require("../../db/schools.json");
 const QUERYURL = "https://api.data.gov/ed/collegescorecard/v1/schools/?api_key=pTArHCwVfBH8pDnZG0UAOdFF6iDRecYtEs9rCIc3";
 
+function get20(query, results, page, total, res) {
+    query += `&page=${page}`;
+    axios.get(query)
+        .then(function (response) {
+            for(var i = 0; i < response.data.results.length; i++) {
+                let type;
+                if(response.data.results[i]["2015.academics.program_available.bachelors"]) type = "Four Year";
+                else type = "Two Year";
+
+                let ownership;
+                switch (response.data.results[i]["school.ownership"]) {
+                    case 1: ownership = "Public";
+                        break;
+                    case 2: ownership = "Private (Non-Profit)";
+                        break;
+                    case 3: ownership = "Private (For-Profit)";
+                        break;
+                }
+    
+                let location;
+                switch (response.data.results[i]["school.locale"]) {
+                    case 11:
+                    case 12:
+                    case 13: location = "City";
+                        break;
+                    case 21:
+                    case 22:
+                    case 23: location = "Suburb";
+                        break;
+                    case 31:
+                    case 32:
+                    case 33: location = "Town";
+                        break;
+                    case 41:
+                    case 42:
+                    case 43: location = "Rural";
+                        break;
+                }
+
+                let size;
+                if(response.data.results[i]["2015.student.size"] < 2000) size = "Small";
+                else if(response.data.results[i]["2015.student.size"] < 15000) size = "Medium";
+                else size = "Large";
+
+                let result = {
+                    id: response.data.results[i].id,
+                    name: response.data.results[i]["school.name"],
+                    city: response.data.results[i]["school.city"],
+                    state: response.data.results[i]["school.state"],
+                    students: response.data.results[i]["2015.student.size"],
+                    size: size,
+                    url: response.data.results[i]["school.school_url"],
+                    type: type,
+                    ownership: ownership,
+                    location: location,
+                }
+                results.push(result);
+            }
+            total -= 20;
+            if(total > 0) get20(query, page + 1, total);
+            else res.json(results);
+        })
+        .catch(function (err) {
+            console.log(err);
+            res.status(400).end();
+        })
+}
+
 router.get("/list", function (req, res) {
     res.json(schoolList);
 });
@@ -29,6 +97,7 @@ router.get("/search/:zip/:distance", function (req, res) {
 
     axios.get(query)
         .then(function (response) {
+            let total = response.data.metadata.total;
             let results = [];
             for(var i = 0; i < response.data.results.length; i++) {
                 let type;
@@ -84,7 +153,9 @@ router.get("/search/:zip/:distance", function (req, res) {
                 }
                 results.push(result);
             }
-            res.json(results);
+            total -= 20;
+            if(total > 0) get20(query, results, 1, total, res);
+            else res.json(results);
         })
         .catch(function (err) {
             console.log(err);

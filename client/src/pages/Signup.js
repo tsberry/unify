@@ -24,14 +24,14 @@ class Signup extends Component {
     getSuggestions = value => {
         const inputValue = value.trim().toLowerCase();
         const inputLength = inputValue.length;
-    
+
         return inputLength === 0 ? [] : this.state.schoolList.filter(school =>
             school.NAME.toLowerCase().slice(0, inputLength) === inputValue
         );
     };
-    
+
     getSuggestionValue = suggestion => suggestion.NAME;
-    
+
     // Use your imagination to render suggestions.
     renderSuggestion = suggestion => (
         <div>
@@ -45,20 +45,26 @@ class Signup extends Component {
         }
         else {
             API.getSchoolList()
-            .then(res => {
-                this.setState({schoolList: res.data});
-                console.log(this.state.schoolList);
-            });
+                .then(res => {
+                    this.setState({ schoolList: res.data });
+                    console.log(this.state.schoolList);
+                });
         }
     }
 
     handleFormSubmit = event => {
         event.preventDefault();
         API.signUpUser(this.state.username, this.state.type, this.state.schoolId, this.state.email, this.state.password, this.state.type, this.state.school)
-            .then(res => {
+            .then(res1 => {
                 // once the user has signed up
-                // send them to the login page
-                this.props.history.replace('/login');
+                // log them in automatically
+                this.Auth.login(this.state.username, this.state.password)
+                    .then(res2 => {
+                        // once user is logged in
+                        // take them to their profile page
+                        this.props.history.replace(`/`);
+                    })
+                    .catch(err => alert(err));
             })
             .catch(err => alert(err.message));
     };
@@ -121,18 +127,18 @@ class Signup extends Component {
 
                     {this.state.type === "alumn" ?
                         <div className="form-group">
-                        <label htmlFor="school">Your School</label>
-                        <Autosuggest
-                            suggestions={this.state.suggestions}
-                            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-                            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-                            onSuggestionSelected={this.onSuggestionSelected}
-                            getSuggestionValue={this.getSuggestionValue}
-                            renderSuggestion={this.renderSuggestion}
-                            inputProps={inputProps}
-                            id="school"
-                        />
-                        
+                            <label htmlFor="school">Your School</label>
+                            <Autosuggest
+                                suggestions={this.state.suggestions}
+                                onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+                                onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+                                onSuggestionSelected={this.onSuggestionSelected}
+                                getSuggestionValue={this.getSuggestionValue}
+                                renderSuggestion={this.renderSuggestion}
+                                inputProps={inputProps}
+                                id="school"
+                            />
+
                         </div>
                         : ""}
                     <div className="form-group">
