@@ -1,5 +1,10 @@
-.result {
+/* .result {
   width: 95%;
+}
+
+.favorite {
+    float: right;
+    padding: 10px;
 }
 
 @media screen and (min-width: 40.063em) and (max-width: 357px) {
@@ -12,4 +17,4 @@
   .result {
     margin-left: 0;
   }
-}
+} */

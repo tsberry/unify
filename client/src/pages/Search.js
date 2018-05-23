@@ -3,8 +3,10 @@ import API from "../utils/API";
 import SearchForm from "../components/SearchForm";
 import ResultCard from "../components/ResultCard";
 import Container from "../components/Container"
-import AuthService from "../components/AuthService";
-const auth = new AuthService();
+import GridContainer from "../components/GridContainer";
+import GridX from "../components/GridX";
+//import AuthService from "../components/AuthService";
+//const auth = new AuthService();
 //import SearchResults from "../components/SearchResults";
 
 
@@ -42,8 +44,8 @@ class Search extends Component {
   render() {
     return (
         <Container>
-          {(auth.loggedIn()) ?
-            <div>
+          <GridContainer>
+            <GridX>
             <SearchForm
               handleFormSubmit={this.handleFormSubmit}
               handleInputChange={this.handleInputChange}
@@ -51,7 +53,9 @@ class Search extends Component {
               zipcode={this.state.zipcode}
               radius={this.state.radius}
             />
-            <ul>
+            </GridX>
+
+            <GridX>
               {this.state.schools.map(school => (
                 <ResultCard
                   getInfo={this.getInfo}
@@ -64,14 +68,18 @@ class Search extends Component {
                   ownership = {school.ownership}
                   location = {school.location}
                   size = {school.size}
+                  page="search"
+                  key={school.id}
                 />
               ))}
-            </ul> 
-            </div> :
-            <div><h3>Please login to search for schools</h3></div>}
+            </GridX>
+            </GridContainer>
         </Container> 
     );
   }
 }
 
 export default Search;
+
+
+// {(auth.loggedIn()) ? : <div><h3>Please login to search for schools</h3></div>} 
