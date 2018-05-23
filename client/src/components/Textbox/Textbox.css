@@ -1,6 +1,6 @@
-.textbox {
+ .textbox {
     z-index: 100;
-    position: relative;
+    position: absolute;
     margin: 0 auto;
     background-color: #aaaaaa8f;
     border-radius: 10px;

@@ -2,13 +2,17 @@ import React from "react";
 import "./Hero.css";
 
 const Hero = props => (
-  <div className="grid-x">
-    <div className="cell small-12 medium-12 large-12">
-      <div className="hero text-center" style={{ backgroundImage: `url(${props.backgroundImage})` }}>
-        {props.children}
-      </div>
-    </div>
-  </div>
-);
 
+  <div class="slideshow-container">
+    <img src="./assets/img/fabian-mardi-119790-unsplash.jpg" alt="university background"/>
+    {props.children}
+  </div>
+
+);
+    
 export default Hero;
+
+/* <div className="hero text-center">
+      {props.children}
+    </div> */
+    
