@@ -10,7 +10,27 @@ class Question extends Component {
 
   render(){
     return(
-        <div> {auth.getProfile().type === "prospect" ? <div>HERE ARE SOME QUESTIONS</div> : <div>HERE ARE SOME QUESTIONS <AnswerQuestion /></div>} </div>
+        <div> 
+          {
+            auth.getProfile().type === "prospect" ? 
+            <div>
+              {
+                this.props.questions.map(question => 
+                <div className="card">
+                  <div className="card-divider"> 
+                    Question : <h3>{question.question}</h3> 
+                  </div>
+                  <div className="card-section">
+                    Asker : {question.User.username}
+                    <hr />
+                    Posted : {question.createdAt}
+                  </div>
+                </div>)
+              }
+              </div> : <div>
+            HERE ARE SOME QUESTIONS <AnswerQuestion />
+          </div>} 
+        </div>
     )
   }
 }
