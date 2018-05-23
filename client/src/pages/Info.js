@@ -128,7 +128,7 @@ class Info extends Component {
                         <Map />
                     </GridX>
                     <GridX>
-                        <Rating />
+                        <Rating ratings={this.state.ratings} />
 
 
                         {isAlum ? <RankingTab school={this.state.school.id} /> : ""}
