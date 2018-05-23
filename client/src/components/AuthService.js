@@ -11,6 +11,7 @@ export default class AuthService {
                 // return the rest of the response
                 return res;
             });
+            // .catch(err => console.log(err));
     };
 
     getProfile = () => {
