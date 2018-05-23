@@ -53,17 +53,9 @@ class RankingTab extends React.Component {
     }
     onSubmit(event) {
         event.preventDefault();
-        API.saveRating(auth.getProfile().id, this.props.school, this.state.faculty, this.state.localFood, this.state.campusLife, this.state.transportation, this.state.security);
+        API.saveRating(auth.getProfile().id, this.props.school, this.state.faculty, this.state.localFood, this.state.campusLife, this.state.transportation, this.state.security)
+        .then(res => this.props.onRating(res.data));
     }
-
-    //code for half star feature
-    // onStarClickHalfStar(nextValue, prevValue, name, e) {
-    //     const xPos = (e.pageX - e.currentTarget.getBoundingClientRect().left) / e.currentTarget.offsetWidth;
-
-    //     if (xPos <= 0.5) {
-    //         nextValue -= 0.5;
-    //     }
-    // }
 
     render() {
          
