@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./Tab4.css";
+import "./GradInfo.css";
 
 
-class Tab4 extends Component {
+class GradInfo extends Component {
 
     render(){
         return(
@@ -12,9 +12,9 @@ class Tab4 extends Component {
                     <p>Graduation</p>
                 </div>
                 <div className="card-section">
-                    <h3><b>{this.props.gradrate}%</b> Graduation Rate</h3>
+                    <h3>{this.props.gradrate}% Graduation Rate</h3>
                     <hr />
-                    <h4><b>{this.props.earnings}</b> Salary After Attending</h4>
+                    <h4>${this.props.earnings} Salary After Attending</h4>
                     <p>The median earnings of former students who received federal financial aid, at 10 years after entering the school.</p>
                 </div>
             </div>
@@ -23,4 +23,4 @@ class Tab4 extends Component {
     }
 }
 
-export default Tab4;
+export default GradInfo;

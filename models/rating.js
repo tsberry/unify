@@ -1,22 +1,22 @@
 module.exports = function (sequelize, DataTypes) {
     var Rating = sequelize.define("Rating", {
-        ratingFor_Transport: {
+        transport: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        ratingFor_Food: {
+        food: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        ratingFor_Faculty: {
+        faculty: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        ratingFor_CampusLife: {
+        campuslife: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        ratingFor_Security: {
+        security: {
             type: DataTypes.INTEGER,
             allowNull: false
         }

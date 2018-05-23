@@ -68,14 +68,12 @@ class RankingTab extends React.Component {
     render() {
          
 
-        return (<div className="card">
-          
-            <div className="content">
-
-                <div className="tabs-content" data-tabs-content="example-tabs">
-                    <div className="tabs-panel is-active" id="panel1">
+        return (
+            <div className="cell medium-12 large-6">
+                <div className="card">
+                    <div className="ranking-content">
                         <form>
-                            <label htmlFor="ranking"><h3>Rank this School</h3></label>
+                            <label htmlFor="ranking"><h4>Rank this School</h4></label>
                             <label htmlFor="faculty">
 
                                 <span>Faculty: </span>
@@ -159,12 +157,11 @@ class RankingTab extends React.Component {
                                     emptyStarColor="#868889"
                                 />
                             </label>
-                            <input type="submit" id="submit" value="submit" onClick={this.onSubmit.bind(this)} />
+                            <button type="submit" id="submit" value="submit" onClick={this.onSubmit.bind(this)} className="button">Submit</button>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
 
         )
 

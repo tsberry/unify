@@ -57,6 +57,12 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             }
         });
+
+        College.hasMany(models.Rating, {
+            foreignKey: {
+                allowNull: false
+            }
+        })
     };
 
     return College;
