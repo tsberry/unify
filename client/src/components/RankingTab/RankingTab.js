@@ -54,22 +54,9 @@ class RankingTab extends React.Component {
     onSubmit(event) {
         event.preventDefault();
         API.saveRating(auth.getProfile().id, this.props.school, this.state.faculty, this.state.localFood, this.state.campusLife, this.state.transportation, this.state.security);
-        // fetch('api/learning', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'multipart/form-data',
-        //         'Accept': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         security: this.state.security,
-        //         faculty: this.state.faculty,
-        //         campusLife: this.state.campusLife,
-        //         transportation: this.state.transportation,
-        //         localFood: this.state.localFood
-        //     })
-        // })
     }
 
+    //code for half star feature
     // onStarClickHalfStar(nextValue, prevValue, name, e) {
     //     const xPos = (e.pageX - e.currentTarget.getBoundingClientRect().left) / e.currentTarget.offsetWidth;
 
@@ -82,8 +69,7 @@ class RankingTab extends React.Component {
          
 
         return (<div className="card">
-            {/* <div>{typeMessage}</div>
-            {isAlum ? <div>Alumns only</div> : ''} */}
+          
             <div className="content">
 
                 <div className="tabs-content" data-tabs-content="example-tabs">
