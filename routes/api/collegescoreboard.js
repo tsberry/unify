@@ -63,7 +63,7 @@ function get20(query, results, page, total, res) {
                 results.push(result);
             }
             total -= 20;
-            if(total > 0) get20(query, page + 1, total);
+            if(total > 0) get20(query, results, page + 1, total, res);
             else res.json(results);
         })
         .catch(function (err) {
@@ -76,10 +76,16 @@ router.get("/list", function (req, res) {
     res.json(schoolList);
 });
 
-router.get("/search/:zip/:distance", function (req, res) {
+router.get("/search/:id/:state/:zip/:distance", function (req, res) {
     let query = QUERYURL;
-    query += `&zip=${req.params.zip}`;
-    query += `&distance=${req.params.distance}`;
+    if(req.params.id !== "none") query += `&id=${req.params.id}`;
+    else {
+        if(req.params.state !== "none") query += `&school.state=${req.params.state}`;
+        if(req.params.zip !== "none" && req.params.distance !== "none") {
+            query += `&zip=${req.params.zip}`;
+            query += `&distance=${req.params.distance}`;
+        }
+    }
     query += `&2015.academics.program_available.assoc_or_bachelors=true`;
     query += "&sort=2015.completion.rate_suppressed.overall%3adesc";
     let fields = [
