@@ -1,8 +1,3 @@
-body,
-h1 {
-    font-family: 'Montserrat', sans-serif;
-}
-
 nav {
     padding: 10px;
     padding-bottom: 20px;
@@ -20,6 +15,20 @@ nav {
     color: white;
 }
 
+nav a {
+    color: #1565c0;
+}
+
 nav ul {
     float: right;
+}
+
+nav a:hover,
+nav a:visited {
+    color: #1565c0;
+} 
+
+nav .action:hover,
+nav .action:visited {
+    color: white;
 }

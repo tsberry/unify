@@ -77,24 +77,24 @@ class SearchForm extends Component {
     };
 
     return (
-      <form className="grid-container search">
-        <div className="form-group">
-          <div className="grid-x grid-padding-x title">
+      <div className="cell large-12">
+        <form className="grid-container search">
+          <div className="grid-x grid-margin-x title">
             <div className="cell"><h4>Search</h4></div>
           </div>
-          <div className="grid-x grid-padding-x">
+          <div className="grid-x grid-margin-x">
             <div className="small-12 medium-3 large-3 cell">
               <label>School Name
               <Autosuggest
-                suggestions={this.state.suggestions}
-                onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-                onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-                onSuggestionSelected={this.onSuggestionSelected}
-                getSuggestionValue={this.getSuggestionValue}
-                renderSuggestion={this.renderSuggestion}
-                inputProps={inputProps}
-                id="school"
-              />
+                  suggestions={this.state.suggestions}
+                  onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+                  onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+                  onSuggestionSelected={this.onSuggestionSelected}
+                  getSuggestionValue={this.getSuggestionValue}
+                  renderSuggestion={this.renderSuggestion}
+                  inputProps={inputProps}
+                  id="school"
+                />
               </label>
             </div>
             <div className="medium-3 large-3 cell">
@@ -116,8 +116,8 @@ class SearchForm extends Component {
               <button type="submit" onClick={this.props.handleFormSubmit} className="button">Submit</button>
             </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     )
   }
 }

@@ -1,20 +1,22 @@
 body,
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4, h5 {
     font-family: 'Montserrat', sans-serif;
 }
 
-.button {
+/* .button {
     background-color: #1565c0;
 }
 
-/* button a:hover,
-button a:active,
-button a:visited {
-    color: white !important;
-} */
+a:hover,
+a:active {
+    color: black !important;
+}
+
+button:hover,
+button:active,
+button:visited {
+    background-color: #1565c0 !important;
+}
 
 .form-control, 
 select {
@@ -23,5 +25,5 @@ select {
 
 .callout {
     padding-left: 20px;
-  }
+  } */
 
