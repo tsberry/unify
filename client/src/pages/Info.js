@@ -74,6 +74,10 @@ class Info extends Component {
     }
 
     render() {
+
+        const userType = new AuthService().getProfile().type;
+        const isAlum = "alumn" === userType;
+
         return (
             <Container>
                 <GridContainer>
@@ -86,6 +90,7 @@ class Info extends Component {
                             url={this.state.school.url}
                             starAction={this.starAction}
                             saved={this.state.saved}
+                            isAlum={isAlum}
                         />
                     </GridX>
                     <GridX>
@@ -124,7 +129,9 @@ class Info extends Component {
                     </GridX>
                     <GridX>
                         <Rating ratings={this.state.ratings} />
-                        <RankingTab school={this.state.id} />
+
+
+                        {isAlum ? <RankingTab school={this.state.school.id} /> : ""}
                     </GridX>
                 </GridContainer>
             </Container>

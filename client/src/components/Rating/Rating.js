@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Rating.css";
 
 
+
 class Rating extends Component {
 
     getAverage = () => this.props.ratings.reduce(((total, rating) => total + rating.transport + rating.food + rating.campuslife + rating.security + rating.faculty), 0) / (this.props.ratings.length * 5);
@@ -34,6 +35,7 @@ class Rating extends Component {
 
         return (
             <div className="cell medium-12 large-6">
+                
                 <div className="card">
                     <div className="card-section rating-body">
                         <div className="grid-x grid-margin-x">
