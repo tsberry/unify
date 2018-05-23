@@ -51,7 +51,7 @@ export default {
     },
     
 
-    
+
     saveQuestion: (question, userId, collegeId) => {
         return axios.post('/api/question', { question: question, userId: userId, collegeId: collegeId });
     },

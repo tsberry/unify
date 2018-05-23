@@ -138,7 +138,7 @@ class Info extends Component {
                         {isAlum ? <RankingTab school={this.state.id} /> : ""}
                     </GridX>
                     <GridX>
-                        <QuestionAnswers questions={this.state.questions} userId={this.state.userId} collegeId={this.state.collegeId} />
+                        <QuestionAnswers questions={this.state.questions} userId={auth.getProfile().id} collegeId={this.state.id} />
                     </GridX>
                 </GridContainer>
             </Container>
