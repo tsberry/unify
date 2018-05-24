@@ -13,10 +13,14 @@ import GridX from "../components/GridX";
 class Search extends Component {
   
   state = {
-    state: "",
+    state: "none",
     zipcode: "",
     radius: "",
-    schools: []
+    schools: [],
+    schoolList: [],
+    school: "",
+    schoolId: "",
+    suggestions: []
   }
 
   handleInputChange = event => {
@@ -26,9 +30,70 @@ class Search extends Component {
     });
   };
 
+  componentWillMount() {
+    API.getSchoolList()
+      .then(res => {
+        this.setState({ schoolList: res.data });
+      });
+  }
+
+  getSuggestions = value => {
+    const inputValue = value.trim().toLowerCase();
+    const inputLength = inputValue.length;
+
+    return inputLength === 0 ? [] : this.state.schoolList.filter(school =>
+      school.NAME.toLowerCase().slice(0, inputLength) === inputValue
+    );
+  };
+
+  getSuggestionValue = suggestion => suggestion.NAME;
+
+  // Use your imagination to render suggestions.
+  renderSuggestion = suggestion => (
+    <div>
+      {suggestion.NAME} ({suggestion.ID})
+    </div>
+  );
+
+  onChange = (event, { newValue }) => {
+    this.setState({
+      school: newValue
+    });
+  };
+
+  // Autosuggest will call this function every time you need to update suggestions.
+  // You already implemented this logic above, so just use it.
+  onSuggestionsFetchRequested = ({ value }) => {
+    this.setState({
+      suggestions: this.getSuggestions(value)
+    });
+  };
+
+  // Autosuggest will call this function every time you need to clear suggestions.
+  onSuggestionsClearRequested = () => {
+    this.setState({
+      suggestions: []
+    });
+  };
+
+  onSuggestionSelected = (event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) => {
+    event.preventDefault();
+    this.setState({
+      school: `${suggestionValue} (${suggestion.ID})`,
+      schoolId: suggestion.ID
+    });
+  };
+
   handleFormSubmit = event => {
     event.preventDefault();
-    API.searchColleges(this.state.zipcode, this.state.radius)
+    let id = this.state.schoolId;
+    let state = this.state.state;
+    let zipcode = this.state.zipcode;
+    let radius = this.state.radius;
+    if(id.toString().length !== 6) id = "none";
+    if(zipcode === "") zipcode = "none";
+    if(radius === "") radius = "none";
+    API.searchColleges(id, state, zipcode, radius)
     .then(res => {
       this.setState ({
         schools: res.data
@@ -49,9 +114,17 @@ class Search extends Component {
             <SearchForm
               handleFormSubmit={this.handleFormSubmit}
               handleInputChange={this.handleInputChange}
+              school={this.state.school}
               state={this.state.state}
               zipcode={this.state.zipcode}
               radius={this.state.radius}
+              onChange={this.onChange}
+              suggestions={this.state.suggestions}
+              onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+              onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+              onSuggestionSelected={this.onSuggestionSelected}
+              getSuggestionValue={this.getSuggestionValue}
+              renderSuggestion={this.renderSuggestion}
             />
             </GridX>
 

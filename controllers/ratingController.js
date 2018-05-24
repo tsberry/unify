@@ -14,6 +14,14 @@ module.exports = {
             campuslife: req.body.campuslife,
             security: req.body.security
         })
-        .then(data => res.json(data));
+        .then(data => {
+            db.Rating
+            .findAll({
+                where: {
+                    CollegeId: collegeId
+                }
+            })
+            .then(ratings => res.json(ratings));
+        });
     }
 }
