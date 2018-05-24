@@ -15,21 +15,47 @@ class Question extends Component {
             auth.getProfile().type === "prospect" ? 
             <div>
               {
-                this.props.questions.map(question => 
-                <div className="card">
-                  <div className="card-divider"> 
-                    Question : <h3>{question.question}</h3> 
+                this.props.questions.map(
+                  question => 
+                  <div className="card">
+                    <div className="card-divider"> 
+                    <h4><b>Question: </b>{question.question}</h4> 
+                    </div>
+                    <div className="card-section">
+                      <b>From:</b> {question.User.username}
+                      <hr />
+                      <b>Posted:</b> {question.createdAt}
+                    </div>
+                    <div> 
+                      <Answer answers={question.Answers}/>
+                    </div>
                   </div>
-                  <div className="card-section">
-                    Asker : {question.User.username}
-                    <hr />
-                    Posted : {question.createdAt}
-                  </div>
-                </div>)
+                )
               }
               </div> : <div>
-            HERE ARE SOME QUESTIONS <AnswerQuestion />
-          </div>} 
+              {
+                this.props.questions.map(
+                  question => 
+                  <div className="card">
+                    <div className="card-divider"> 
+                      <h4><b>Question: </b>{question.question}</h4> 
+                    </div>
+                    <div className="card-section">
+                      <b>From:</b> {question.User.username}
+                      <hr />
+                      <b>Posted:</b> {question.createdAt}
+                    </div>
+                    <div className="card-divider">
+                      <Answer answers={question.Answers}/>
+                    </div>
+                    <div className="card-divider">
+                      <AnswerQuestion questionId={question.id}userId={this.props.userId} collegeId={this.props.collegeId}/>
+                    </div>
+                  </div>
+                )
+              } 
+          </div>
+          } 
         </div>
     )
   }
