@@ -114,11 +114,11 @@ class Rating extends Component {
                             <div className="grid-x grid-margin-x">
                                 <div className="cell large-12">
                                     <span className="heading">School Rating</span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
+                                    <span className="fa fa-star"></span>
+                                    <span className="fa fa-star"></span>
+                                    <span className="fa fa-star"></span>
+                                    <span className="fa fa-star"></span>
+                                    <span className="fa fa-star"></span>
                                     <p>{this.props.ratings.length} reviews</p>
                                     <hr />
                                 </div>
