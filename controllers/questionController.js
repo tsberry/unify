@@ -5,8 +5,8 @@ module.exports = {
         db.Question.create( 
             { 
                 question: req.body.question,
-                CollegeId: req.body.CollegeId,
-                UserId: req.body.UserId
+                CollegeId: req.body.collegeId,
+                UserId: req.body.userId
             } 
         )
             .then(data => res.json(data))

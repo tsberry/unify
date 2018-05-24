@@ -14,7 +14,11 @@ import RankingTab from "../components/RankingTab/RankingTab";
 import Map from "../components/Map";
 import API from "../utils/API";
 import AuthService from "../components/AuthService";
-
+// import GridX from "../components/GridX/GridX";
+// import RankingTab from "../components/RankingTab/RankingTab";
+import QuestionAnswers from "../components/QuestionAnswers/QuestionAnswers";
+import Question from "../components/Question/Question.js";
+import Answer from "../components/Answer/Answer";
 
 const auth = new AuthService();
 
@@ -134,6 +138,9 @@ class Info extends Component {
 
 
                         {isAlum ? <RankingTab school={this.state.id} /> : ""}
+                    </GridX>
+                    <GridX>
+                        <QuestionAnswers questions={this.state.questions} userId={auth.getProfile().id} collegeId={this.state.id} />
                     </GridX>
                 </GridContainer>
             </Container>
