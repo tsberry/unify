@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AuthService from "../AuthService";
-import Answer from "../Answer/Answer";
-import AskQuestion from "../AskQuestion/AskQuestion";
+//import Answer from "../Answer/Answer";
+//import AskQuestion from "../AskQuestion/AskQuestion";
 import AnswerQuestion from "../AnswerQuestion/AnswerQuestion";
 
 const auth = new AuthService();

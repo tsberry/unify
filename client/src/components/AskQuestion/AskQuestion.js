@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AuthService from "../AuthService";
 import API from "../../utils/API";
-import axios from "axios";
+//import axios from "axios";
 
 const auth = new AuthService();
 

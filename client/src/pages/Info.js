@@ -17,8 +17,8 @@ import AuthService from "../components/AuthService";
 // import GridX from "../components/GridX/GridX";
 // import RankingTab from "../components/RankingTab/RankingTab";
 import QuestionAnswers from "../components/QuestionAnswers/QuestionAnswers";
-import Question from "../components/Question/Question.js";
-import Answer from "../components/Answer/Answer";
+//import Question from "../components/Question/Question.js";
+//import Answer from "../components/Answer/Answer";
 
 const auth = new AuthService();
 
