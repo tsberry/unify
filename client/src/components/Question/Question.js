@@ -20,7 +20,7 @@ class Question extends Component {
                     <div className="card-section">
                       <p>{question.question}</p> 
                     </div>
-                    <div> 
+                    <div className="card-divider">
                       <Answer answers={question.Answers}/>
                     </div>
                   </div>
