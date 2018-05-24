@@ -26,7 +26,7 @@ class Question extends Component {
                       <hr />
                       <b>Posted:</b> {question.createdAt}
                     </div>
-                    <div> 
+                    <div className="card-divider">
                       <Answer answers={question.Answers}/>
                     </div>
                   </div>
