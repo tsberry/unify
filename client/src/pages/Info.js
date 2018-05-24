@@ -19,6 +19,7 @@ import AuthService from "../components/AuthService";
 import QuestionAnswers from "../components/QuestionAnswers/QuestionAnswers";
 import Question from "../components/Question/Question.js";
 import Answer from "../components/Answer/Answer";
+import IconBar from "../components/IconBar/IconBar";
 
 const auth = new AuthService();
 
@@ -130,6 +131,7 @@ class Info extends Component {
                     </GridX>
                     <GridX>
                         <Map />
+                        <IconBar />
                     </GridX>
                     <GridX>
                         <Rating ratings={this.state.ratings} />
