@@ -162,9 +162,7 @@ class Info extends Component {
                         />
                     </GridX>
                     <GridX>
-                        <Map 
-                            name={this.state.school.name}
-                        />
+                        <Map name={this.state.school.name} />
                     </GridX>
                     <GridX>
                         {(isAlum && auth.getProfile().school === this.state.school.id)  ? 

@@ -5,10 +5,13 @@
   "main": "server.js",
   "scripts": {
     "server": "node server.js",
-    "client": "node scripts/start-client.js",
+    "client": "cd client && npm run start",
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
-    "build": "node scripts/build.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cd client && npm run build",
+    "deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "installDeps": "yarn && cd client && yarn",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -23,12 +26,7 @@
     "express": "^4.16.3",
     "express-jwt": "^5.3.1",
     "jsonwebtoken": "^8.2.1",
-    "jwt-decode": "^2.2.0",
     "mysql2": "^1.5.3",
-    "react-autosuggest": "^9.3.4",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-star-rating-component": "^1.4.1",
     "sequelize": "^4.37.6"
   },
   "repository": "https://github.com/tsberry/unify.git"

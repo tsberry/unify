@@ -16,4 +16,4 @@ class TitleCard extends Component {
     }
 }
 
-export default TitleCard;
+export default TitleCard
