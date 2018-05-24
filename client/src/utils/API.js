@@ -12,7 +12,6 @@ export default {
 
     // Get colleges within distance radius of zip
     searchColleges: function (id, state, zip, distance) {
-        console.log(`/api/collegescoreboard/search/${id}/${state}/${zip}/${distance}`);
         return axios.get(`/api/collegescoreboard/search/${id}/${state}/${zip}/${distance}`);
     },
 

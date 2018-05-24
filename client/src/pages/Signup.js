@@ -47,7 +47,6 @@ class Signup extends Component {
             API.getSchoolList()
                 .then(res => {
                     this.setState({ schoolList: res.data });
-                    console.log(this.state.schoolList);
                 });
         }
     }
