@@ -1,15 +1,15 @@
 .rating-body {
     padding: 30px;
-    height: 468px;
+    height: 449px;
 }
 
 .heading {
     font-size: 25px;
-    margin-right: 25px;
+    margin-right: 15px;
 }
 
 .fa {
-    font-size: 25px;
+    font-size: 20px;
     color: grey;
 }
 
@@ -56,6 +56,10 @@
 .bar-3 {height: 18px; background-color: #1565c0;}
 .bar-2 {height: 18px; background-color: #1565c0;}
 .bar-1 {height: 18px; background-color: #1565c0;}
+
+#text-cell {
+    margin-top: 30px;
+}
 
 /* Responsive layout - make the columns stack on top of each other instead of next to each other */
 @media (max-width: 400px) {

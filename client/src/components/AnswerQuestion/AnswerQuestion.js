@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import AuthService from "../AuthService";
+import "./AnswerQuestion.css";
+//import AuthService from "../AuthService";
 import API from "../../utils/API";
-import axios from "axios";
+//import axios from "axios";
 
-const auth = new AuthService();
+//const auth = new AuthService();
 
 class AnswerQuestion extends Component {
 
@@ -34,7 +35,7 @@ class AnswerQuestion extends Component {
               <form onSubmit={this.handleFormSubmit}>
                 <div className="form-group">
                   <label htmlFor="answer">Answer Question</label>
-                  <input className="form-control"
+                  <textarea className="form-control"
                     name="answer"
                     type="text"
                     id="answer"
