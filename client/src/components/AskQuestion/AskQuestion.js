@@ -6,11 +6,11 @@ const auth = new AuthService();
 
 class AskQuestion extends Component {
     state = {
-        question : "",
+        question: "",
     };
 
     handleFormSubmit = event => {
-    
+        event.preventDefault();
         API.saveQuestion(this.state.question, this.props.userId, this.props.collegeId)
             .then(res => this.props.onQuestion(res.data)).catch(err => alert(err.message));
     };
@@ -37,7 +37,7 @@ class AskQuestion extends Component {
                                         name="question"
                                         type="text"
                                         id="question"
-                                        onChange={this.handleChange}/>
+                                        onChange={this.handleChange} />
                                 </div>
                                 <button type="submit" className="button">Submit</button>
                             </form>
