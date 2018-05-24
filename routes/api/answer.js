@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const answerController = require("../../controllers/answerController");
+const isAuthenticated = require("../../config/auth");
 
-router.post("/", answerController.saveAnswer);
+router.post("/", isAuthenticated, answerController.saveAnswer);
 
 module.exports = router;
