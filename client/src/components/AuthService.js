@@ -55,6 +55,4 @@ export default class AuthService {
         localStorage.removeItem('id_token');
     }
 
-
-
 }

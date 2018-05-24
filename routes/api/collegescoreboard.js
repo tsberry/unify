@@ -2,6 +2,8 @@ const router = require("express").Router();
 const axios = require("axios");
 const programList = require("../../db/programs.json");
 const schoolList = require("../../db/schools.json");
+const isAuthenticated = require("../../config/auth");
+
 const QUERYURL = "https://api.data.gov/ed/collegescorecard/v1/schools/?api_key=pTArHCwVfBH8pDnZG0UAOdFF6iDRecYtEs9rCIc3";
 
 function get20(query, results, page, total, res) {
@@ -76,7 +78,7 @@ router.get("/list", function (req, res) {
     res.json(schoolList);
 });
 
-router.get("/search/:id/:state/:zip/:distance", function (req, res) {
+router.get("/search/:id/:state/:zip/:distance", isAuthenticated, function (req, res) {
     let query = QUERYURL;
     if(req.params.id !== "none") query += `&id=${req.params.id}`;
     else {
@@ -169,7 +171,7 @@ router.get("/search/:id/:state/:zip/:distance", function (req, res) {
         })
 });
 
-router.get("/schools/:id", function (req, res) {
+router.get("/schools/:id", isAuthenticated, function (req, res) {
     let query = QUERYURL;
     query += `&id=${req.params.id}`;
 

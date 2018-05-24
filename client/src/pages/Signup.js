@@ -68,9 +68,9 @@ class Signup extends Component {
             })
             .catch(err => {
 
-                if(err.response.data.name === "SequelizeUniqueConstraintError") this.handleLoginErr("unique");
-                else if(err.response.data.name === "SequelizeValidationError") this.handleLoginErr("validation");
-                else this.handleLoginErr("other");
+                if(err.response.data.name === "SequelizeUniqueConstraintError") this.handleSignupErr("unique");
+                else if(err.response.data.name === "SequelizeValidationError") this.handleSignupErr("validation");
+                else this.handleSignupErr("other");
             });
     };
 

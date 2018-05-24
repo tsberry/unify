@@ -1,4 +1,8 @@
 import axios from "axios";
+import AuthService from "../components/AuthService";
+const auth = new AuthService();
+
+axios.defaults.headers.common['Authorization'] = `Bearer ${auth.getToken()}`;
 
 export default {
     // Get list of all schools in the government data
