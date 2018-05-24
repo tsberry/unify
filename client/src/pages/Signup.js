@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Container from "../components/Container";
 import AuthService from '../components/AuthService';
 import API from '../utils/API';
 import Autosuggest from "react-autosuggest";
@@ -126,6 +127,7 @@ class Signup extends Component {
         };
 
         return (
+            <Container>
             <div className="signup-container">
 
                 <h4>Join</h4>
@@ -185,6 +187,7 @@ class Signup extends Component {
                 <p><Link to="/login">Go to Login</Link></p>
                 <ToastContainer closeButton={false} hideProgressBar={true} />
             </div>
+            </Container>
         );
     }
 }

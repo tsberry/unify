@@ -30,3 +30,9 @@ a:visited {
     color: #1565c0;
     font-style: italic;
 } 
+
+.react-autosuggest__suggestions-list
+{
+  height: 200px;
+  overflow-y: auto;
+}

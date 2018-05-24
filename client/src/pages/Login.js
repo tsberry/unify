@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Container from "../components/Container";
 import AuthService from '../components/AuthService';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -43,6 +44,7 @@ class Login extends Component {
 
     render() {
         return (
+            <Container>
             <div className="login-container">
                 <h4>Login</h4>
                 <form onSubmit={this.handleFormSubmit}>
@@ -70,7 +72,7 @@ class Login extends Component {
                 <p><Link to="/join">or Sign-up!</Link></p>
                 <ToastContainer closeButton={false} hideProgressBar={true} />
             </div>
-
+            </Container>
         );
     }
 }

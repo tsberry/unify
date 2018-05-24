@@ -6,10 +6,10 @@ const Textbox = () => (
     <div className="textbox">
         <div className="border-box">
         <div className="text-content">
-            <h3>The school of your dreams is just a click away...</h3>
+            <h2>The school of your dreams is just a click away...</h2>
             <hr />
-            <p>Finding your college match boils down to one question: does this college have what you’re looking for?</p>
-            <h4>We’re here to help answer that.</h4>
+            <h5>Finding your college match boils down to one question: does this college have what you’re looking for?</h5>
+            <h3>We’re here to help answer that.</h3>
         </div>
         </div>
     </div>
