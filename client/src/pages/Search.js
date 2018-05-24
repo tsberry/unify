@@ -5,9 +5,9 @@ import ResultCard from "../components/ResultCard";
 import Container from "../components/Container"
 import GridContainer from "../components/GridContainer";
 import GridX from "../components/GridX";
-//import AuthService from "../components/AuthService";
-//const auth = new AuthService();
-//import SearchResults from "../components/SearchResults";
+import AuthService from "../components/AuthService";
+const auth = new AuthService();
+
 
 
 class Search extends Component {
@@ -109,6 +109,7 @@ class Search extends Component {
   render() {
     return (
         <Container>
+          {(auth.loggedIn()) ? 
           <GridContainer>
             <GridX>
             <SearchForm
@@ -146,7 +147,7 @@ class Search extends Component {
                 />
               ))}
             </GridX>
-            </GridContainer>
+            </GridContainer> : <div><h3>Please login to search for schools.</h3></div>}
         </Container> 
     );
   }
@@ -154,5 +155,3 @@ class Search extends Component {
 
 export default Search;
 
-
-// {(auth.loggedIn()) ? : <div><h3>Please login to search for schools</h3></div>} 

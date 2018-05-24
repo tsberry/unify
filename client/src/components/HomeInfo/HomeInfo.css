@@ -17,8 +17,18 @@
     padding-bottom: 60px;
 }
 
+.two {
+    margin-top: 40px;
+}
+
 .three {
-    padding-top: 40px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.two ul,
+.three ul {
+    list-style-type: square;
 }
 
 .img-one {
@@ -28,10 +38,6 @@
 
 .center-info {
     padding-bottom: 70px;
-}
-
-.center-info ul {
-    list-style-type: square;
 }
 
 #school-icon {

@@ -6,6 +6,7 @@ import GridX from "../components/GridX/GridX";
 import Programs from "../components/Programs/Programs";
 import Financial from "../components/Financial/Financial";
 import ImageTab from "../components/ImageTab/ImageTab";
+import ImageTab2 from "../components/ImageTab2/ImageTab2";
 import GradInfo from "../components/GradInfo/GradInfo";
 import TestScores from "../components/TestScores/TestScores";
 import StudentBody from "../components/StudentBody/StudentBody";
@@ -131,12 +132,12 @@ class Info extends Component {
                         />
                     </GridX>
                     <GridX>
-                        <Programs
-                            majors={this.state.majors}
-                        />
                         <ImageTab
                             image="../assets/img/annie-spratt-608001-unsplash.jpg"
                             alt="academics" />
+                        <Programs
+                            majors={this.state.majors}
+                        />
                     </GridX>
                     <GridX>
                         <TestScores
@@ -167,15 +168,12 @@ class Info extends Component {
                         />
                     </GridX>
                     <GridX>
+                        <Rating ratings={this.state.ratings} />
                         {(isAlum && auth.getProfile().school === this.state.school.id)  ? 
-                        <div className="cell medium-12 large-8">
-                            <Rating ratings={this.state.ratings} />
-                        </div> :
-                        <div className="cell medium-12 large-12">
-                            <Rating ratings={this.state.ratings} />
-                        </div>}
-
-                        {mySchool ? <RankingTab onRating={this.onRating} school={this.state.id} /> : ""}
+                            <RankingTab onRating={this.onRating} school={this.state.id} /> :
+                            <ImageTab2
+                            image="../assets/img/naassom-azevedo-541451-unsplash.jpg"
+                            alt="student group" />}
                     </GridX>
                     <GridX>
                         <QuestionAnswers onQuestion={this.onQuestion} mySchool={mySchool} questions={this.state.questions} userId={auth.getProfile().id} collegeId={this.state.id} />

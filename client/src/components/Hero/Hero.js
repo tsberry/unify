@@ -12,7 +12,4 @@ const Hero = props => (
     
 export default Hero;
 
-/* <div className="hero text-center">
-      {props.children}
-    </div> */
     
