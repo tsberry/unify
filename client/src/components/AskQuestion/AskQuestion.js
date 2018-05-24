@@ -11,7 +11,6 @@ class AskQuestion extends Component {
     };
 
     handleFormSubmit = event => {
-        event.preventDefault();
     
         API.saveQuestion(this.state.question, this.props.userId, this.props.collegeId)
             .then(res => {}).catch(err => alert(err.message));

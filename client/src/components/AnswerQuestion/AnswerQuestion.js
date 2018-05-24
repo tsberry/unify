@@ -12,7 +12,6 @@ class AnswerQuestion extends Component {
   };
 
   handleFormSubmit = event => {
-    event.preventDefault();
     console.log("text:"+this.state.answer+"qId:"+this.props.questionId +"uId:"+ this.props.userId+"colId:"+ this.props.collegeId);
     //(answer, questionId, userId, collegeId)
     API.saveAnswer(this.state.answer, this.props.questionId, this.props.userId, this.props.collegeId)
