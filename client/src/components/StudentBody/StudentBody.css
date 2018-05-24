@@ -1,4 +1,9 @@
 .scales {
-    height: 350px;
+    height: 305px;
     overflow-y: scroll;
+}
+
+.student-body ul {
+    list-style-type: square;
+    padding-left: 50px;
 }

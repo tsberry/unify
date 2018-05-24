@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./AnswerQuestion.css";
 import API from "../../utils/API";
 
 class AnswerQuestion extends Component {
@@ -31,7 +32,7 @@ class AnswerQuestion extends Component {
                             <form onSubmit={this.handleFormSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="answer">Answer Question</label>
-                                    <input className="form-control"
+                                    <textarea className="form-control"
                                         name="answer"
                                         type="text"
                                         id="answer"

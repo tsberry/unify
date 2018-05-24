@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Container from "../components/Container"
+import Container from "../components/Container";
 import TitleCard from "../components/TitleCard";
 import GridContainer from "../components/GridContainer";
 import GridX from "../components/GridX/GridX";
@@ -14,8 +14,6 @@ import RankingTab from "../components/RankingTab/RankingTab";
 import Map from "../components/Map";
 import API from "../utils/API";
 import AuthService from "../components/AuthService";
-// import GridX from "../components/GridX/GridX";
-// import RankingTab from "../components/RankingTab/RankingTab";
 import QuestionAnswers from "../components/QuestionAnswers/QuestionAnswers";
 
 const auth = new AuthService();
@@ -169,8 +167,13 @@ class Info extends Component {
                         />
                     </GridX>
                     <GridX>
-                        <Rating ratings={this.state.ratings} />
-
+                        {(isAlum && auth.getProfile().school === this.state.school.id)  ? 
+                        <div className="cell medium-12 large-8">
+                            <Rating ratings={this.state.ratings} />
+                        </div> :
+                        <div className="cell medium-12 large-12">
+                            <Rating ratings={this.state.ratings} />
+                        </div>}
 
                         {mySchool ? <RankingTab onRating={this.onRating} school={this.state.id} /> : ""}
                     </GridX>

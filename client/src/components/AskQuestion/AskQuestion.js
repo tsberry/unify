@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./AskQuestion.css";
 import AuthService from "../AuthService";
 import API from "../../utils/API";
 
@@ -24,16 +25,16 @@ class AskQuestion extends Component {
     render() {
         return (
             <div> {auth.getProfile().type === "prospect" ? <div className="cell medium-12">
-                <div className="card grad">
+                <div className="card">
                     <div className="card-divider">
-                        <h3>Have a Question?:</h3>
+                        <p>Have a Question?</p>
                     </div>
-                    <div className="card-section">
+                    <div className="card-section" id="question-box">
                         <div className="cell large-12">
                             <form onSubmit={this.handleFormSubmit}>
                                 <div className="form-group">
-                                    <label htmlFor="question">Question Text</label>
-                                    <input className="form-control"
+                                    <label htmlFor="question">Ask below</label>
+                                    <textarea className="form-control"
                                         name="question"
                                         type="text"
                                         id="question"

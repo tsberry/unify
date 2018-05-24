@@ -6,7 +6,7 @@ const Textbox = props => (
     <div className="grid-container info-1">
         <div className="grid-x grid-padding-x">
             <div className="cell one large-12">
-                <p>You didn't spend the last 12 years of your life studying, to end up in a college that isn't right for you. </p>
+                <h5>You didn't spend the last 12 years of your life studying, to end up in a college that isn't right for you. </h5>
                 <h3>Just what makes a college “right for you," anyway?</h3>
                     <img id="school-icon" src="../assets/img/001-university.png" alt="school icon" />
                     <img id="rating-icon" src="../assets/img/009-review.png" alt="rating icon" />
@@ -16,7 +16,7 @@ const Textbox = props => (
         <div className="grid-x grid-padding-x center-info">
             <div className="cell two large-6">
                 <h5><b>
-                    When searching for colleges, try to remember what college should be. It's a place where:
+                    When searching for colleges, remember what college should be. It's a place where:
                             </b></h5>
                 <br />
                 <ul>
@@ -41,7 +41,8 @@ const Textbox = props => (
                 <img src="../assets/img/nathan-dumlao-572049-unsplash.jpg" alt="college arial view" />
             </div>
             <div className="cell three large-6">
-                <p>Even if you've dreamed of going to a certain college your whole life, not checking out your other options is a mistake.</p>
+                <h4 className="color-text">Even if you've dreamed of going to a certain college your whole life, not checking out your other options is a mistake.</h4>
+                <br/>
                 <p>Finding your perfect school takes time and effort, but it's worth it in the end.</p>
             </div>
         </div>

@@ -1,5 +1,6 @@
 .result {
   width: 95%;
+  margin-left: 2%;
 }
 
 .result h4:hover {
@@ -11,7 +12,7 @@
     padding: 10px;
 }
 
-@media screen and (min-width: 40.063em) and (max-width: 357px) {
+/* @media screen and (min-width: 40.063em) and (max-width: 357px) {
   .result {
     margin-left: 0;
   }
@@ -21,4 +22,4 @@
   .result {
     margin-left: 0;
   }
-}
+} */
