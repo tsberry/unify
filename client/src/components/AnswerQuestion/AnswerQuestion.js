@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-import AuthService from "../AuthService";
 import API from "../../utils/API";
-import axios from "axios";
-
-const auth = new AuthService();
 
 class AnswerQuestion extends Component {
 
@@ -16,7 +12,7 @@ class AnswerQuestion extends Component {
     console.log("text:"+this.state.answer+"qId:"+this.props.questionId +"uId:"+ this.props.userId+"colId:"+ this.props.collegeId);
     //(answer, questionId, userId, collegeId)
     API.saveAnswer(this.state.answer, this.props.questionId, this.props.userId, this.props.collegeId)
-      .then(res => { }).catch(err => alert(err.message));
+      .then(res => this.props.onAnswer(res.data)).catch(err => alert(err.message));
   };
 
   handleChange = event => {

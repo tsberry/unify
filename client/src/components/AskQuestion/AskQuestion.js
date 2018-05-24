@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import AuthService from "../AuthService";
 import API from "../../utils/API";
-import axios from "axios";
 
 const auth = new AuthService();
 
@@ -14,7 +13,7 @@ class AskQuestion extends Component {
         event.preventDefault();
     
         API.saveQuestion(this.state.question, this.props.userId, this.props.collegeId)
-            .then(res => {}).catch(err => alert(err.message));
+            .then(res => this.props.onQuestion(res.data)).catch(err => alert(err.message));
     };
 
     handleChange = event => {

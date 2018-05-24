@@ -17,11 +17,11 @@ class QuestionAnswers extends Component {
           <div className="cell large-12">
             <Question questions={this.props.questions} /> 
             <br/> 
-            <AskQuestion userId={this.props.userId} collegeId={this.props.collegeId} />
+            <AskQuestion onQuestion={this.props.onQuestion} userId={this.props.userId} collegeId={this.props.collegeId} />
           </div> 
           : 
           <div className="cell large-12">
-            <Question questions={this.props.questions} userId={this.props.userId} collegeId={this.props.collegeId}/>
+            <Question mySchool={this.props.mySchool} questions={this.props.questions} userId={this.props.userId} collegeId={this.props.collegeId}/>
           </div>
         } 
         </div>
