@@ -10,7 +10,19 @@ module.exports = {
                 UserId: req.body.userId
             } 
         )
-            .then(data => res.json(data))
+            .then(data => {
+                db.Answer.findAll({
+                    where: {
+                        QuestionId: req.body.questionId
+                    },
+                    include: [
+                        {
+                            model: db.User
+                        }
+                    ]
+                })
+                .then(answers => res.json(answers));
+            })
             .catch(err => res.status(422).json(err));
     }
 }

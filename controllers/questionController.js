@@ -9,7 +9,28 @@ module.exports = {
                 UserId: req.body.userId
             } 
         )
-            .then(data => res.json(data))
+            .then(data => {
+                db.Question
+                .findAll({
+                    where: {
+                        CollegeId: req.body.collegeId
+                    },
+                    include: [
+                        {
+                            model: db.User
+                        },
+                        {
+                            model: db.Answer,
+                            include: [
+                                {
+                                    model: db.User
+                                }
+                            ]
+                        }
+                    ]
+                })
+                .then(questions => res.json(questions));
+            })
             .catch(err => res.status(422).json(err));
     }
 }
