@@ -129,7 +129,9 @@ class Info extends Component {
                         />
                     </GridX>
                     <GridX>
-                        <Map />
+                        <Map 
+                            name={this.state.school.name}
+                        />
                     </GridX>
                     <GridX>
                         <Rating ratings={this.state.ratings} />

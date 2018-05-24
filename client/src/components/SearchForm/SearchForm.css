@@ -1,3 +1,12 @@
 form.search button[type="submit"] {
   margin-top: 23px;
 }
+
+.search {
+  width: 95%;
+}
+
+.button:hover {
+  background-color: #1565c0;
+  font-style: italic;
+}

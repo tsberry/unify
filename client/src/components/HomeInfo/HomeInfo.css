@@ -30,6 +30,10 @@
     padding-bottom: 70px;
 }
 
+.center-info ul {
+    list-style-type: square;
+}
+
 #school-icon {
     height: 90px;
     padding-top: 30px;
