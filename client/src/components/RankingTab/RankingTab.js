@@ -62,7 +62,7 @@ class RankingTab extends React.Component {
 
         return (
             <div className="cell medium-12 large-4">
-                <div className="card">
+                <div className="card rating-sumbit">
                     <div className="ranking-content">
                         <form>
                             <label htmlFor="ranking"><h4>Rate this School</h4></label>

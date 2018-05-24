@@ -111,18 +111,16 @@ class Rating extends Component {
                                     <p>*Overall rating is calculated based on a 5-point scale across multiple categories pertaining to the school.</p>
                                 </div>
                             </div> :
-                            <div>
-                                <div className="grid-x grid-margin-x">
-                                    <div className="cell large-12">
-                                        <span className="heading">School Rating</span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <p>{this.props.ratings.length} reviews</p>
-                                        <hr />
-                                    </div>
+                            <div className="grid-x grid-margin-x">
+                                <div className="cell large-12">
+                                    <span className="heading">School Rating</span>
+                                    <span className="fa fa-star"></span>
+                                    <span className="fa fa-star"></span>
+                                    <span className="fa fa-star"></span>
+                                    <span className="fa fa-star"></span>
+                                    <span className="fa fa-star"></span>
+                                    <p>{this.props.ratings.length} reviews</p>
+                                    <hr />
                                 </div>
                                 <div className="grid-x grid-margin-x">
                                     <div className="cell large-12">
