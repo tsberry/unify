@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Container from "../components/Container"
+import Container from "../components/Container";
 import TitleCard from "../components/TitleCard";
 import GridContainer from "../components/GridContainer";
 import GridX from "../components/GridX/GridX";

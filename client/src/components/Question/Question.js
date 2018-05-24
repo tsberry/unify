@@ -17,14 +17,12 @@ class Question extends Component {
               {
                 this.props.questions.map(
                   question => 
-                  <div className="card">
+                  <div className="card"> 
                     <div className="card-divider"> 
-                    <h4><b>Question: </b>{question.question}</h4> 
+                      <p><b>{question.User.username}</b> asked on {question.createdAt}</p>
                     </div>
                     <div className="card-section">
-                      <b>From:</b> {question.User.username}
-                      <hr />
-                      <b>Posted:</b> {question.createdAt}
+                      <p>{question.question}</p> 
                     </div>
                     <div> 
                       <Answer answers={question.Answers}/>
@@ -38,12 +36,10 @@ class Question extends Component {
                   question => 
                   <div className="card">
                     <div className="card-divider"> 
-                      <h4><b>Question: </b>{question.question}</h4> 
+                      <p><b>{question.User.username}</b> asked on {question.createdAt}</p>
                     </div>
                     <div className="card-section">
-                      <b>From:</b> {question.User.username}
-                      <hr />
-                      <b>Posted:</b> {question.createdAt}
+                      <p>{question.question}</p>
                     </div>
                     <div className="card-divider">
                       <Answer answers={question.Answers}/>

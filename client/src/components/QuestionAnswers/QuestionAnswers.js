@@ -8,23 +8,19 @@ const auth = new AuthService();
 
 class QuestionAnswers extends Component {
 
-  render(){
-    return(
-        <div> 
-        {
-          auth.getProfile().type === "prospect" 
-          ? 
-          <div className="cell large-12">
-            <Question questions={this.props.questions} /> 
-            <br/> 
-            <AskQuestion userId={this.props.userId} collegeId={this.props.collegeId} />
-          </div> 
-          : 
-          <div className="cell large-12">
-            <Question questions={this.props.questions} userId={this.props.userId} collegeId={this.props.collegeId}/>
-          </div>
-        } 
-        </div>
+  render() {
+    return (
+      <div className="cell large-12"> 
+        {auth.getProfile().type === "prospect"
+            ?
+            <div className="cell large-12">
+              <AskQuestion userId={this.props.userId} collegeId={this.props.collegeId} />
+              <Question questions={this.props.questions} />
+            </div> :
+            <div className="cell large-12">
+              <Question questions={this.props.questions} userId={this.props.userId} collegeId={this.props.collegeId} />
+            </div>}
+      </div>
     )
   }
 }
