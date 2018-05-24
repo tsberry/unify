@@ -1,5 +1,9 @@
-/* .result {
+.result {
   width: 95%;
+}
+
+.result h4:hover {
+  cursor: pointer;
 }
 
 .favorite {
@@ -17,4 +21,4 @@
   .result {
     margin-left: 0;
   }
-} */
+}

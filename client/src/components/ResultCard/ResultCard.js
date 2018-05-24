@@ -10,6 +10,7 @@ class ResultCard extends Component {
             <div className="grid-container callout secondary result">
                 <h4><span onClick={() => this.props.getInfo(this.props.id)}>{this.props.name}</span>{this.props.page === "saved" ? <span onClick={() => this.props.starAction(this.props.id)} className="fa fa-star favorite checked"></span> : ""}</h4>
                 <p>{this.props.city}, {this.props.state}</p>
+                <a href={`http://${this.props.url}`} target="_blank">{this.props.url}</a>
                 <p>{this.props.students} Undergraduate Students</p>
 
                 <div className="grid-x">
