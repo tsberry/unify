@@ -12,14 +12,13 @@ class Financial extends Component {
                     <p>Financial Aid & Debt</p>
                 </div>
                 <div className="card-section content">
-                    <p>Students Receiving Federal Loans</p>
-                    <h4>{this.props.loanrate}%</h4>
+                    <h5>{this.props.loanrate}% Students Receive Federal Loans</h5>
                     <hr />
                     <p>Typical Total Debt After Graduation</p>
                     <h4>${this.props.debt}</h4>
                     <p>*For undergraduate borrowers who complete college.</p>
                     <hr />
-                    <p>Typical Loan Payment:   ${this.props.monthly} / mon</p>
+                    <h5>Typical Loan Payment:   ${this.props.monthly} / mon</h5>
                 </div>
             </div>
         </div>
