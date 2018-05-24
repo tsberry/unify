@@ -110,7 +110,7 @@ class Signup extends Component {
         });
     };
 
-    handleLoginErr(type) {
+    handleSignupErr(type) {
         let message;
         if(type === "unique") message = "That Username/Email is already in use!";
         else if(type === "validation") message = "Invalid Email Address!";

@@ -2,19 +2,18 @@ import React, { Component } from "react";
 import "./AskQuestion.css";
 import AuthService from "../AuthService";
 import API from "../../utils/API";
-//import axios from "axios";
 
 const auth = new AuthService();
 
 class AskQuestion extends Component {
     state = {
-        question : "",
+        question: "",
     };
 
     handleFormSubmit = event => {
-    
+        event.preventDefault();
         API.saveQuestion(this.state.question, this.props.userId, this.props.collegeId)
-            .then(res => {}).catch(err => alert(err.message));
+            .then(res => this.props.onQuestion(res.data)).catch(err => alert(err.message));
     };
 
     handleChange = event => {
@@ -39,7 +38,7 @@ class AskQuestion extends Component {
                                         name="question"
                                         type="text"
                                         id="question"
-                                        onChange={this.handleChange}/>
+                                        onChange={this.handleChange} />
                                 </div>
                                 <button type="submit" className="button">Submit</button>
                             </form>

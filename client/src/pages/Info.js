@@ -15,8 +15,6 @@ import Map from "../components/Map";
 import API from "../utils/API";
 import AuthService from "../components/AuthService";
 import QuestionAnswers from "../components/QuestionAnswers/QuestionAnswers";
-//import Question from "../components/Question/Question.js";
-//import Answer from "../components/Answer/Answer";
 
 const auth = new AuthService();
 
@@ -107,10 +105,15 @@ class Info extends Component {
         this.setState({ ratings: ratings});
     }
 
+    onQuestion = questions => {
+        this.setState({ questions: questions});
+    }
+
     render() {
 
         const userType = new AuthService().getProfile().type;
         const isAlum = "alumn" === userType;
+        const mySchool = (isAlum && auth.getProfile().school === this.state.school.id);
 
         return (
             <Container>
@@ -172,10 +175,10 @@ class Info extends Component {
                             <Rating ratings={this.state.ratings} />
                         </div>}
 
-                        {(isAlum && auth.getProfile().school === this.state.school.id) ? <RankingTab onRating={this.onRating} school={this.state.id} /> : ""}
+                        {mySchool ? <RankingTab onRating={this.onRating} school={this.state.id} /> : ""}
                     </GridX>
                     <GridX>
-                        <QuestionAnswers questions={this.state.questions} userId={auth.getProfile().id} collegeId={this.state.id} />
+                        <QuestionAnswers onQuestion={this.onQuestion} mySchool={mySchool} questions={this.state.questions} userId={auth.getProfile().id} collegeId={this.state.id} />
                     </GridX>
                 </GridContainer>
             </Container>

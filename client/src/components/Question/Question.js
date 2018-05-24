@@ -1,20 +1,16 @@
 import React, { Component } from "react";
-import AuthService from "../AuthService";
 import Answer from "../Answer/Answer";
-//import AskQuestion from "../AskQuestion/AskQuestion";
-import AnswerQuestion from "../AnswerQuestion/AnswerQuestion";
-
-const auth = new AuthService();
+import AnswerWrapper from "../AnswerWrapper";
 
 class Question extends Component {
 
-  render(){
-    return(
-        <div> 
-          {
-            auth.getProfile().type === "prospect" ? 
+    render() {
+        return (
             <div>
               {
+                !this.props.mySchool ?
+                <div>
+                    {
                 this.props.questions.map(
                   question => 
                   <div className="card"> 
@@ -41,12 +37,8 @@ class Question extends Component {
                     <div className="card-section">
                       <p>{question.question}</p>
                     </div>
-                    <div className="card-divider">
-                      <Answer answers={question.Answers}/>
-                    </div>
-                    <div className="card-divider">
-                      <AnswerQuestion questionId={question.id}userId={this.props.userId} collegeId={this.props.collegeId}/>
-                    </div>
+                    <AnswerWrapper answers={question.Answers} questionId={question.id} userId={this.props.userId} collegeId={this.props.collegeId}/>
+
                   </div>
                 )
               } 
