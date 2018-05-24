@@ -11,6 +11,7 @@ export default class AuthService {
                 // return the rest of the response
                 return res;
             });
+            // .catch(err => console.log(err));
     };
 
     getProfile = () => {
@@ -53,7 +54,5 @@ export default class AuthService {
         axios.defaults.headers.common['Authorization'] = null;
         localStorage.removeItem('id_token');
     }
-
-
 
 }

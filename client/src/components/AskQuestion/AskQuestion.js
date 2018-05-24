@@ -5,17 +5,12 @@ import API from "../../utils/API";
 
 const auth = new AuthService();
 
-
-
-
-
 class AskQuestion extends Component {
     state = {
         question : "",
     };
 
     handleFormSubmit = event => {
-        event.preventDefault();
     
         API.saveQuestion(this.state.question, this.props.userId, this.props.collegeId)
             .then(res => {}).catch(err => alert(err.message));

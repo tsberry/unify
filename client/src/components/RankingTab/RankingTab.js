@@ -53,30 +53,22 @@ class RankingTab extends React.Component {
     }
     onSubmit(event) {
         event.preventDefault();
-        API.saveRating(auth.getProfile().id, this.props.school, this.state.faculty, this.state.localFood, this.state.campusLife, this.state.transportation, this.state.security);
+        API.saveRating(auth.getProfile().id, this.props.school, this.state.faculty, this.state.localFood, this.state.campusLife, this.state.transportation, this.state.security)
+        .then(res => this.props.onRating(res.data));
     }
-
-    //code for half star feature
-    // onStarClickHalfStar(nextValue, prevValue, name, e) {
-    //     const xPos = (e.pageX - e.currentTarget.getBoundingClientRect().left) / e.currentTarget.offsetWidth;
-
-    //     if (xPos <= 0.5) {
-    //         nextValue -= 0.5;
-    //     }
-    // }
 
     render() {
          
 
         return (
-            <div className="cell medium-12 large-6">
+            <div className="cell medium-12 large-4">
                 <div className="card">
                     <div className="ranking-content">
                         <form>
-                            <label htmlFor="ranking"><h4>Rank this School</h4></label>
+                            <label htmlFor="ranking"><h4>Rate this School</h4></label>
                             <label htmlFor="faculty">
 
-                                <span>Faculty: </span>
+                                <span>Faculty </span>
                                 <br />
 
                                 <StarRatingComponent
@@ -93,7 +85,7 @@ class RankingTab extends React.Component {
                             </label>
                             <label htmlFor="campusLife">
 
-                                <span> Campus Life: </span>
+                                <span> Campus Life </span>
                                 <br />
 
                                 <StarRatingComponent
@@ -109,7 +101,7 @@ class RankingTab extends React.Component {
                             </label>
 
                             <label htmlFor="localFood">
-                                <span> Local Food: </span>
+                                <span> Local Food </span>
                                 <br />
 
                                 <StarRatingComponent
@@ -126,7 +118,7 @@ class RankingTab extends React.Component {
 
                             <label htmlFor="transportation">
 
-                                <span> Transportation: </span>
+                                <span> Transportation </span>
                                 <br />
 
                                 <StarRatingComponent
@@ -143,7 +135,7 @@ class RankingTab extends React.Component {
 
                             <label htmlFor="security">
 
-                                <span> Security: </span>
+                                <span> Security </span>
                                 <br />
 
                                 <StarRatingComponent

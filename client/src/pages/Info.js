@@ -14,8 +14,6 @@ import RankingTab from "../components/RankingTab/RankingTab";
 import Map from "../components/Map";
 import API from "../utils/API";
 import AuthService from "../components/AuthService";
-// import GridX from "../components/GridX/GridX";
-// import RankingTab from "../components/RankingTab/RankingTab";
 import QuestionAnswers from "../components/QuestionAnswers/QuestionAnswers";
 //import Question from "../components/Question/Question.js";
 //import Answer from "../components/Answer/Answer";
@@ -62,6 +60,34 @@ class Info extends Component {
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (!auth.loggedIn()) this.props.history.replace("/");
+        else {
+            API.getCollege(nextProps.match.params.id)
+                .then(res1 => {
+                    this.setState({ school: res1.data, majors: res1.data.majors, races: res1.data.races })
+                    API.saveCollege(res1.data)
+                        .then(res2 => {
+                            API.getSavedCollege(nextProps.match.params.id)
+                                .then(res3 => {
+                                    this.setState({ questions: res3.data.college.Questions, ratings: res3.data.ratings, id: res3.data.college.id });
+                                    if (auth.loggedIn()) {
+                                        API.getColleges(auth.getProfile().id)
+                                            .then(res4 => {
+                                                for (let i = 0; i < res4.data.colleges.length; i++) {
+                                                    if (this.state.school.id === res4.data.colleges[i].queryId) {
+                                                        this.setState({ saved: true });
+                                                        return;
+                                                    }
+                                                }
+                                            });
+                                    }
+                                })
+                        });
+                }).catch(err => console.log(err));
+        }
+    }
+
     starAction = () => {
         if (this.state.saved) {
             API.deleteUser(auth.getProfile().id, this.state.school.id)
@@ -75,6 +101,10 @@ class Info extends Component {
                     this.setState({ saved: true });
                 });
         }
+    }
+
+    onRating = ratings => {
+        this.setState({ ratings: ratings});
     }
 
     render() {
@@ -134,10 +164,15 @@ class Info extends Component {
                         />
                     </GridX>
                     <GridX>
-                        <Rating ratings={this.state.ratings} />
+                        {(isAlum && auth.getProfile().school === this.state.school.id)  ? 
+                        <div className="cell medium-12 large-8">
+                            <Rating ratings={this.state.ratings} />
+                        </div> :
+                        <div className="cell medium-12 large-12">
+                            <Rating ratings={this.state.ratings} />
+                        </div>}
 
-
-                        {isAlum ? <RankingTab school={this.state.id} /> : ""}
+                        {(isAlum && auth.getProfile().school === this.state.school.id) ? <RankingTab onRating={this.onRating} school={this.state.id} /> : ""}
                     </GridX>
                     <GridX>
                         <QuestionAnswers questions={this.state.questions} userId={auth.getProfile().id} collegeId={this.state.id} />
