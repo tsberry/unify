@@ -19,7 +19,8 @@ import AuthService from "../components/AuthService";
 import QuestionAnswers from "../components/QuestionAnswers/QuestionAnswers";
 import Question from "../components/Question/Question.js";
 import Answer from "../components/Answer/Answer";
-import IconBar from "../components/IconBar/IconBar";
+import MyGoogleMap from "../components/MyGoogleMap";
+
 
 const auth = new AuthService();
 
@@ -130,8 +131,14 @@ class Info extends Component {
                         />
                     </GridX>
                     <GridX>
-                        <Map />
-                        <IconBar />
+                        <Map schoolName={this.state.school.name} />
+                        {/* <MyGoogleMap 
+                            isMarkerShown={false} 
+                            googleMapURL="https://www.google.com/maps/embed/v1/search?key=AIzaSyACqntmAF2aHjkPK-1FFyUKw7q9F4vQ-Xw&q="
+                            loadingElement={<div style={{ height: `100%` }} />}
+                            containerElement={<div style={{ height: `400px` }} />}
+                            mapElement={<div style={{ height: `100%` }} />}
+                        /> */}
                     </GridX>
                     <GridX>
                         <Rating ratings={this.state.ratings} />
