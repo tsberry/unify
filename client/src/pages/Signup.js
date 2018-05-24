@@ -114,7 +114,7 @@ class Signup extends Component {
         };
 
         return (
-            <div className="container">
+            <div className="signup-container">
 
                 <h4>Join</h4>
                 <br />

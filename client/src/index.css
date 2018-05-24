@@ -11,3 +11,22 @@ div[data-reactroot] {
   padding: 0;
   margin: 0;
 } */
+
+body,
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Pontano Sans', sans-serif;
+}
+
+.signup-container,
+.login-container {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 400px;
+}
+
+a:hover,
+a:active,
+a:visited {
+    color: #1565c0;
+    font-style: italic;
+} 

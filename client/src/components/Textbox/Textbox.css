@@ -1,15 +1,32 @@
  .textbox {
     z-index: 100;
     position: absolute;
-    margin: 0 auto;
-    background-color: #aaaaaa8f;
+    background-color: #888888cc;
     border-radius: 10px;
     color: white;
     max-width: 900px;
     max-height: 600px;
-    top: 45%;
+    top: 44%;
+    left: 10%;
+    right: 10%;
+    margin: 0 auto;
 }
 
 .text-content {
     padding: 30px;
+    text-align: center;
+    text-shadow: 2px 2px 4px #303030;
+    color: white;
 }
+
+.text-content h3 {
+    font-size: 30px;
+    padding-top: 10px;
+    margin-top: 0;
+}
+
+/* .border-box {
+    background-color: #1565c075;
+    margin: 20px;
+    border-radius: 10px;
+} */

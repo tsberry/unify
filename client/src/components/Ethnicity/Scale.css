@@ -1,3 +1,12 @@
-progress {
+.scale-container {
     width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
 }
+
+.scale {
+    height: 18px; 
+    background-color: #1565c0;
+}
+

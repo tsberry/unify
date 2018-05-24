@@ -26,9 +26,11 @@ nav ul {
 nav a:hover,
 nav a:visited {
     color: #1565c0;
+    font-style: italic;
 } 
 
 nav .action:hover,
 nav .action:visited {
     color: white;
+    font-style: italic;
 }
