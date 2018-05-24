@@ -3,6 +3,7 @@ nav {
     padding-bottom: 20px;
     padding-left: 20px;
     border-bottom: 1px solid #eaeaea;
+    min-height: 140px;
 }
 
 .brand-logo h1 {
@@ -33,4 +34,19 @@ nav .action:hover,
 nav .action:visited {
     color: white;
     font-style: italic;
+}
+
+@media only screen and (max-width: 40em) { 
+    nav .menu {
+        margin-top: 20px;
+    }
+
+    .brand-logo h1 {
+        font-size: 40px;
+        text-align: center;
+    } 
+
+    nav #slogan {
+        display: none;
+    }
 }

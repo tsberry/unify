@@ -1,1 +1,1 @@
-export { default } from "./Tab3";
+export { default } from "./ImageTab";

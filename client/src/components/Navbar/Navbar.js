@@ -9,7 +9,7 @@ const Navbar = props => (
     <nav className="navbar">
         <div className="nav-wrapper">
             <Link className="brand-logo" to="/"><h1>Uni.fy</h1></Link>
-            <span>Find the university for <i>you</i>.</span>
+            <span id="slogan">Find the university for <i>you</i>.</span>
             <ul className="menu">
                 <li><Link to="/search">Search</Link></li>
                 {(auth.loggedIn()) ? <li onClick={auth.logout}><Link to="/">Log Out</Link></li> : <li><Link to="/login">Login</Link></li>}

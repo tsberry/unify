@@ -69,7 +69,7 @@ class Login extends Component {
                     <button type="submit" className="button">Submit</button>
                     {/* <button type="submit" className="btn btn-primary">Submit</button> */}
                 </form>
-                <p><Link to="/join">or Sign-up!</Link></p>
+                <p><Link to="/join">or Sign up!</Link></p>
                 <ToastContainer closeButton={false} hideProgressBar={true} />
             </div>
             </Container>

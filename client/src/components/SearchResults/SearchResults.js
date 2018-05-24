@@ -1,6 +1,5 @@
 import React from "react";
 import "./SearchResults.css";
-import RankingTab from "../RankingTab";
 
 const SearchResults = props => (
  
