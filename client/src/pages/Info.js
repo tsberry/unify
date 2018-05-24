@@ -15,7 +15,6 @@ import Map from "../components/Map";
 import API from "../utils/API";
 import AuthService from "../components/AuthService";
 import QuestionAnswers from "../components/QuestionAnswers/QuestionAnswers";
-import IconBar from "../components/IconBar/IconBar";
 
 const auth = new AuthService();
 
@@ -163,8 +162,7 @@ class Info extends Component {
                         />
                     </GridX>
                     <GridX>
-                        <Map />
-                        <IconBar />
+                        <Map name={this.state.school.name} />
                     </GridX>
                     <GridX>
                         {(isAlum && auth.getProfile().school === this.state.school.id)  ? 
