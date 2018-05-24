@@ -5,10 +5,6 @@ import axios from "axios";
 
 const auth = new AuthService();
 
-
-
-
-
 class AskQuestion extends Component {
     state = {
         question : "",
