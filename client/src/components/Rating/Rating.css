@@ -1,6 +1,7 @@
 .rating-body {
     padding: 30px;
-    height: 450px;
+    min-height: 450px;
+    max-height: 450px;
 }
 
 .heading {
