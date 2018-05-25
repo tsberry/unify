@@ -1,3 +1,15 @@
 .image {
     max-height: 360px;
 }
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
+    .image {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 40em) { 
+    .image {
+        display: none;
+    }
+}

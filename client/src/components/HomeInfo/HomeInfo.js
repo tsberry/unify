@@ -5,16 +5,16 @@ const Textbox = props => (
     <div className="grid-container info-1">
         <div className="grid-x grid-padding-x">
             <div className="cell one large-12">
-                <h5>You didn't spend the last 12 years of your life studying, to end up in a college that isn't right for you. </h5>
-                <h3>Just what makes a college “right for you," anyway?</h3>
+                <h5>You didn't spend the last twelve years of your life studying, to end up in a college that isn't right for you. </h5>
+                <h3>That's why we connect you to over 7,500 schools nationwide.</h3>
                 <img id="school-icon" src="../assets/img/001-university.png" alt="school icon" />
-                <img id="rating-icon" src="../assets/img/009-review.png" alt="rating icon" />
+                <img id="check-icon" src="../assets/img/005-verified.png" alt="check icon" />
             </div>
         </div>
 
         <div className="grid-x grid-padding-x center-info">
             <div className="cell two large-6">
-                <h5><b>Uni.fy offers prospective students an in-depth view of universities, colleges, and trade schools, providing insight into the things students find most important.</b></h5>
+                <h5><b>We offer prospective students an in-depth view of universities, colleges, and trade schools, providing insight into the things students find most important.</b></h5>
                 <br />
                 <ul>
                     <li>Academics and majors</li>
@@ -25,7 +25,7 @@ const Textbox = props => (
                     <li>Selectivity and admission</li>
                 </ul>
                 <br />
-                <h5>We strive to make your college hunt as painless as possible.</h5>
+                <h5>Making your college hunt as painless as possible.</h5>
             </div>
             <div className="cell img-one large-6">
                 <img src="../assets/img/jason-wong-352463-unsplash.jpg" alt="college hallway" />
@@ -45,8 +45,11 @@ const Textbox = props => (
                 <img src="../assets/img/nathan-dumlao-572049-unsplash.jpg" alt="college arial view" />
             </div>
             <div className="cell three large-6">
-                <h5>Verified alumni can share their knowledge and experience with new students by contributing reviews of their alma mater and answering questions on the school message boards.</h5>
-                
+                <h4><b>Uni.fy is for students, built by students.</b></h4>
+                <hr/>
+                <p>Alumni contribution to our vast database of schools allows prospective students to gain a first-hand understanding of what they can expect at any given school.</p>
+                <br/>
+                <h5>Verified alums can share their knowledge and experience with new students by posting reviews of their alma mater and answering questions on the school message boards.</h5>
             </div>
         </div>
     </div>

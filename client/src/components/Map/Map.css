@@ -17,3 +17,9 @@ iframe {
 .icon:hover {
     cursor: pointer;
 }
+
+@media only screen and (max-width: 40em) { 
+    .icons {
+        display: none;
+    }
+}
